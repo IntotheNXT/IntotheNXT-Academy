@@ -1,0 +1,71 @@
+name: Restore brand assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/restore-brand.yml
+
+permissions:
+  contents: write
+
+jobs:
+  restore-brand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore original IntotheNXT branding
+        shell: bash
+        run: |
+          python - <<'PYCODE'
+          from pathlib import Path
+          import re
+
+          p = Path("index.html")
+          s = p.read_text()
+
+          css = '''
+          .nav-brand-logo{width:184px;height:auto;display:block}
+          .hero-brand-mark{position:absolute;width:min(660px,52vw);right:-70px;bottom:-90px;opacity:.055;pointer-events:none;z-index:1}
+          .footer-brand-logo{width:220px;height:auto;display:block}
+          .footer-brand-mark{width:58px;opacity:.42;display:block}
+          @media(max-width:980px){.nav-brand-logo{width:150px}.hero-brand-mark{right:-140px;bottom:-100px;opacity:.04}.footer-brand-logo{width:190px}}
+          '''
+          s = s.replace("</style>", css + "</style>", 1)
+
+          s = re.sub(
+              r'<a class="brand" href="#top">.*?</a><button class="mobile-toggle"',
+              '<a href="#top" aria-label="IntotheNXT home"><img class="nav-brand-logo" src="assets/intothenxt-logo.svg" alt="IntotheNXT"></a><button class="mobile-toggle"',
+              s,
+              count=1,
+              flags=re.S,
+          )
+
+          s = s.replace(
+              '<header class="hero" id="top">',
+              '<header class="hero" id="top"><img class="hero-brand-mark" src="assets/fast-forward.svg" alt="" aria-hidden="true">',
+              1,
+          )
+
+          s = re.sub(
+              r'<a class="brand footer-brand" href="#top">.*?</a>',
+              '<img class="footer-brand-logo" src="assets/intothenxt-logo.svg" alt="IntotheNXT">',
+              s,
+              count=1,
+              flags=re.S,
+          )
+
+          old_footer = '<div class="footer-bottom"><span>© 2026 IntotheNXT. All rights reserved.</span><span>Entrepreneurship and innovation, by design.</span></div>'
+          new_footer = '<div class="footer-bottom"><span>© 2026 IntotheNXT. All rights reserved.</span><img class="footer-brand-mark" src="assets/fast-forward.svg" alt="" aria-hidden="true"></div>'
+          s = s.replace(old_footer, new_footer, 1)
+
+          p.write_text(s)
+          PYCODE
+      - name: Commit restored branding
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Restore IntotheNXT logo and fast-forward marks"
+          git push
