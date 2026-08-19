@@ -1,4 +1,4 @@
-name: Restore brand assets
+name: Publish Academy v4
 
 on:
   push:
@@ -10,11 +10,11 @@ permissions:
   contents: write
 
 jobs:
-  restore-brand:
+  publish-v4:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Restore original IntotheNXT branding
+      - name: Apply Academy v4 content updates
         shell: bash
         run: |
           python - <<'PYCODE'
@@ -22,50 +22,78 @@ jobs:
           import re
 
           p = Path("index.html")
-          s = p.read_text()
+          s = p.read_text(encoding="utf-8")
 
-          css = '''
-          .nav-brand-logo{width:184px;height:auto;display:block}
-          .hero-brand-mark{position:absolute;width:min(660px,52vw);right:-70px;bottom:-90px;opacity:.055;pointer-events:none;z-index:1}
-          .footer-brand-logo{width:220px;height:auto;display:block}
-          .footer-brand-mark{width:58px;opacity:.42;display:block}
-          @media(max-width:980px){.nav-brand-logo{width:150px}.hero-brand-mark{right:-140px;bottom:-100px;opacity:.04}.footer-brand-logo{width:190px}}
-          '''
-          s = s.replace("</style>", css + "</style>", 1)
+          old_gaps = '''<article class="gap-card reveal"><div class="gap-no">01</div><h3>The capability transfer gap</h3><p><strong>Consulting often delivers the answer without transferring the ability to reproduce the thinking.</strong></p><p>Organisations pay for external intelligence, but much of it leaves with the consultant. The answer remains. The capability to repeat, adapt and improve the method often does not.</p></article><article class="gap-card reveal"><div class="gap-no">02</div><h3>The knowing-doing gap</h3><p><strong>Learning does not automatically change how work gets done.</strong></p><p>People leave training with new ideas and methods, but daily pressures and familiar routines quickly return. Without support at the moment of application, much of the learning fades.</p></article>'''
+          new_gaps = '''<article class="gap-card reveal"><div class="gap-no">01</div><h3>The knowing-doing gap</h3><p><strong>Learning does not automatically change how work gets done.</strong></p><p>People leave training with new ideas and methods, but daily pressures and familiar routines quickly return. Without support at the moment of application, much of the learning fades.</p></article><article class="gap-card reveal"><div class="gap-no">02</div><h3>The capability transfer gap</h3><p><strong>Consulting often delivers the answer without transferring the ability to reproduce the thinking.</strong></p><p>Organisations pay for external intelligence, but much of it leaves with the consultant. The answer remains. The capability to repeat, adapt and improve the method often does not.</p></article>'''
+          if old_gaps in s:
+              s = s.replace(old_gaps, new_gaps, 1)
+          elif new_gaps not in s:
+              raise SystemExit("Could not locate gap cards")
 
-          s = re.sub(
-              r'<a class="brand" href="#top">.*?</a><button class="mobile-toggle"',
-              '<a href="#top" aria-label="IntotheNXT home"><img class="nav-brand-logo" src="assets/intothenxt-logo.svg" alt="IntotheNXT"></a><button class="mobile-toggle"',
-              s,
-              count=1,
-              flags=re.S,
-          )
+          new_example = '''<section class="section" id="example">
+<div class="container">
+<div class="section-head reveal"><div><span class="eyebrow">What capability transfer looks like in practice</span><h2>From training to an executable management method.</h2></div><p>The point is not to give participants another document. Where useful, the method itself can remain available in the AI environment they already use.</p></div>
 
-          s = s.replace(
-              '<header class="hero" id="top">',
-              '<header class="hero" id="top"><img class="hero-brand-mark" src="assets/fast-forward.svg" alt="" aria-hidden="true">',
-              1,
-          )
+<div class="skill-definition reveal"><strong>An AI Skill is not a smart document, and it is more than a prompt. It is an executable workflow for an agent.</strong><p>It defines the steps to follow, the information required, the checks to perform, the outputs to produce, and the points at which the manager needs to review, judge or decide. It can be packaged, for example, as a <code>SKILL.md</code> file or as an equivalent Skill or agent in Microsoft Copilot.</p></div>
 
-          s = re.sub(
-              r'<a class="brand footer-brand" href="#top">.*?</a>',
-              '<img class="footer-brand-logo" src="assets/intothenxt-logo.svg" alt="IntotheNXT">',
-              s,
-              count=1,
-              flags=re.S,
-          )
+<div class="example-block reveal">
+<span class="example-kicker">Example 1 · OGSM</span>
+<h3>From OGSM training to an executable AI Skill</h3>
+<p class="example-intro">Managers learn how Objective, Goals, Strategies and Measures fit together, how to distinguish outcomes from activities, and where real strategic choices are required. After the programme, they can continue working with an <strong>OGSM Skill</strong> that follows the same methodology.</p>
+<div class="example-grid">
+<div class="example-copy"><h3>The OGSM Skill can:</h3><ul><li>gather and structure the relevant strategic context</li><li>guide the team through Objective, Goals, Strategies and Measures</li><li>challenge weak logic or activity-based goals</li><li>surface assumptions and trade-offs</li><li>stop at defined management decision points</li><li>document decisions and unresolved issues</li><li>generate the OGSM and supporting management outputs</li><li>return later to support monthly or quarterly reviews</li></ul><p class="example-punch"><strong>The programme teaches managers how OGSM works and how to make the judgement calls.</strong> The Skill remains behind and helps them run the process again in real work. Over time, it can also incorporate company-specific templates, definitions and review routines.</p></div>
+<div class="skill-window"><div class="skill-window-top"><span></span><span></span><span></span><em>OGSM_Planning.skill</em></div><pre>01  Read strategic context
+02  Draft Objective options
+03  HUMAN CHECKPOINT: choose direction
+04  Build measurable Goals
+05  Challenge activities vs outcomes
+06  HUMAN CHECKPOINT: approve choices
+07  Develop Strategies & Measures
+08  Generate OGSM one-pager
+09  Run monthly / quarterly review</pre></div>
+</div>
+</div>
 
-          old_footer = '<div class="footer-bottom"><span>© 2026 IntotheNXT. All rights reserved.</span><span>Entrepreneurship and innovation, by design.</span></div>'
-          new_footer = '<div class="footer-bottom"><span>© 2026 IntotheNXT. All rights reserved.</span><img class="footer-brand-mark" src="assets/fast-forward.svg" alt="" aria-hidden="true"></div>'
-          s = s.replace(old_footer, new_footer, 1)
+<div class="example-block reveal">
+<span class="example-kicker">Example 2 · Future-Back Strategy</span>
+<h3>From Future-Back Strategy programme to an executable AI Skill</h3>
+<p class="example-intro">Participants do not simply receive slides, exercises and a framework. They learn the approach, practise it on their own business and can leave with a <strong>Future-Back Strategy Skill</strong> that helps them run the method again when the real strategic work starts.</p>
+<div class="example-grid">
+<div class="example-copy"><h3>The Future-Back Strategy Skill can:</h3><ul><li>guide the management team through each stage of the strategy process</li><li>ask the questions required at each stage</li><li>help identify future customer needs and strategic choices</li><li>generate workshop structures and templates</li><li>challenge assumptions and expose gaps in the logic</li><li>document choices, assumptions and decisions</li><li>retain the method between sessions</li><li>produce outputs ready for management or leadership review</li></ul><p class="example-punch">The training teaches people how to think. <strong>The Skill helps them put that thinking into practice.</strong></p></div>
+<div class="skill-window"><div class="skill-window-top"><span></span><span></span><span></span><em>Future_Back_Strategy.skill</em></div><pre>01  Define the future customer
+02  Identify strategic choices
+03  Challenge key assumptions
+04  Map capability gaps
+05  Facilitate management dialogue
+06  Record decisions
+07  Generate review output
+08  Prepare next iteration</pre></div>
+</div>
+</div>
+</div>
+</section>'''
 
-          p.write_text(s)
+          pattern = r'<section class="section" id="example">.*?</section>\s*(?=<section class="section deep" id="operating-system">)'
+          s, n = re.subn(pattern, new_example + "\n\n", s, count=1, flags=re.S)
+          if n != 1 and "Example 1 · OGSM" not in s:
+              raise SystemExit("Could not replace example section")
+
+          extra_css = '''
+.skill-definition{margin:-8px 0 54px;padding:28px 32px;background:#fff;border-left:4px solid var(--green);box-shadow:0 10px 34px rgba(37,43,51,.06);font-size:18px}.skill-definition strong{display:block;margin-bottom:10px;font-size:20px}.skill-definition p{color:var(--muted)}.skill-definition code{font-size:.9em}.example-block+.example-block{margin-top:76px;padding-top:72px;border-top:1px solid var(--line)}.example-kicker{display:block;margin-bottom:14px;color:var(--green-ink);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.example-intro{max-width:980px;margin-bottom:36px;color:var(--muted);font-size:17px}.example-intro strong{color:var(--ink)}
+'''
+          if ".skill-definition{" not in s:
+              s = s.replace("</style>", extra_css + "</style>", 1)
+
+          p.write_text(s, encoding="utf-8")
           PYCODE
-      - name: Commit restored branding
+
+      - name: Commit Academy v4
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html
-          git commit -m "Restore IntotheNXT logo and fast-forward marks"
+          git diff --cached --check
+          git commit -m "Publish Academy v4 with OGSM capability-transfer example"
           git push
