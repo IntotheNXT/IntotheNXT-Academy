@@ -1,0 +1,65 @@
+">
+<div class="persona"><h4>CHRO / L&amp;D</h4><p><strong>Functional:</strong> build capabilities the strategy requires, create consistency and show that development leads to application.</p><p><strong>Emotional/social:</strong> feel confident recommending the programme and be seen as contributing to business performance.</p></div>
+<div class="persona"><h4>CEO / Business leader</h4><p><strong>Functional:</strong> change how managers actually lead, decide and execute.</p><p><strong>Emotional/social:</strong> know the investment addresses real business issues and builds strength inside the organisation.</p></div>
+<div class="persona"><h4>Participant / Manager</h4><p><strong>Functional:</strong> handle real management situations better and know what to do when the situation is unfamiliar.</p><p><strong>Emotional/social:</strong> feel capable in difficult moments and be seen as a credible leader, including when using AI.</p></div>
+<div class="persona"><h4>Participant's manager</h4><p><strong>Functional:</strong> see improved behaviour and reinforce learning without becoming the trainer.</p><p><strong>Emotional/social:</strong> believe the time away from the job was worthwhile.</p></div>
+<div class="persona"><h4>Procurement / Finance</h4><p><strong>Functional:</strong> understand what is being bought, compare alternatives and see credible evidence of use and value.</p><p><strong>Emotional/social:</strong> reduce uncertainty around an investment whose impact is often hard to measure.</p></div>
+</div>
+</div>
+</details>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer-top">
+<img alt="IntotheNXT" class="footer-logo" src="assets/intothenxt-logo.svg"/>
+<div class="footer-contact"><span>Bas Kemme</span><a href="mailto:info@intothenxt.com">info@intothenxt.com</a><a href="https://www.intothenxt.com/">intotheNXT.com</a></div>
+</div>
+<div class="footer-bottom"><span>© 2026 IntotheNXT. All rights reserved.</span><img alt="" class="footer-mark" src="assets/fast-forward.svg"/></div>
+</div>
+</footer>
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+const tabs = [...document.querySelectorAll('.category-tab')];
+const panels = [...document.querySelectorAll('.category-panel')];
+tabs.forEach(tab => tab.addEventListener('click', () => {
+  const target = tab.dataset.target;
+  tabs.forEach(t => { t.classList.toggle('active', t === tab); t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+  panels.forEach(p => p.classList.toggle('active', p.dataset.panel === target));
+}));
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+// Highlight the current section in the desktop navigation.
+const sectionLinks = [...document.querySelectorAll('[data-nav-link="true"]')]
+  .filter(a => a.getAttribute('href') !== '#research' || !a.classList.contains('nav-cta'));
+const observedSections = sectionLinks
+  .map(a => document.querySelector(a.getAttribute('href')))
+  .filter(Boolean);
+if ('IntersectionObserver' in window && observedSections.length) {
+  const navObserver = new IntersectionObserver(entries => {
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    sectionLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + visible.target.id));
+  }, { rootMargin: '-22% 0px -62% 0px', threshold: [0,.1,.25,.5] });
+  observedSections.forEach(s => navObserver.observe(s));
+}
+
+</script>
+</body>
+</html>
