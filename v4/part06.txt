@@ -1,0 +1,87 @@
+nd review routines.</p></div>
+<div class="skill-window"><div class="skill-window-top"><span></span><span></span><span></span><em>OGSM_Planning.skill</em></div><pre>01  Read strategic context
+02  Draft Objective options
+03  HUMAN CHECKPOINT: choose direction
+04  Build measurable Goals
+05  Challenge activities vs outcomes
+06  HUMAN CHECKPOINT: approve choices
+07  Develop Strategies & Measures
+08  Generate OGSM one-pager
+09  Run monthly / quarterly review</pre></div>
+</div>
+</div>
+
+<div class="example-block reveal">
+<span class="example-kicker">Example 2 · Future-Back Strategy</span>
+<h3>From Future-Back Strategy programme to an executable AI Skill</h3>
+<p class="example-intro">Participants do not simply receive slides, exercises and a framework. They learn the approach, practise it on their own business and can leave with a <strong>Future-Back Strategy Skill</strong> that helps them run the method again when the real strategic work starts.</p>
+<div class="example-grid">
+<div class="example-copy"><h3>The Future-Back Strategy Skill can:</h3><ul><li>guide the management team through each stage of the strategy process</li><li>ask the questions required at each stage</li><li>help identify future customer needs and strategic choices</li><li>generate workshop structures and templates</li><li>challenge assumptions and expose gaps in the logic</li><li>document choices, assumptions and decisions</li><li>retain the method between sessions</li><li>produce outputs ready for management or leadership review</li></ul><p class="example-punch">The training teaches people how to think. <strong>The Skill helps them put that thinking into practice.</strong></p></div>
+<div class="skill-window"><div class="skill-window-top"><span></span><span></span><span></span><em>Future_Back_Strategy.skill</em></div><pre>01  Define the future customer
+02  Identify strategic choices
+03  Challenge key assumptions
+04  Map capability gaps
+05  Facilitate management dialogue
+06  Record decisions
+07  Generate review output
+08  Prepare next iteration</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section deep" id="operating-system">
+<div class="container">
+<div class="section-head reveal"><div><span class="eyebrow">Management know-how becomes executable</span><h2>Imagine every relevant programme leaving something behind.</h2></div><p>One Skill can help with one recurring management task. Over time, a library of Skills can capture part of the management intelligence that would otherwise sit with a trainer, consultant or experienced colleague.</p></div>
+<div class="os-grid reveal">
+<div class="os-table-wrap"><table class="os-table"><thead><tr><th>Programme or capability</th><th>Embedded AI Skill</th></tr></thead><tbody><tr><td>OGSM / OKR Planning</td><td>Guides teams from strategic priorities to objectives, measures and actions</td></tr><tr><td>Future-Back Leadership</td><td>Facilitates strategy development</td></tr><tr><td>Culture as a Management System</td><td>Diagnoses cultural blockers and structures interventions</td></tr><tr><td>Leading AI Adoption</td><td>Diagnoses adoption barriers and develops interventions</td></tr><tr><td>Leadership for Disruptive Innovation</td><td>Tests assumptions and builds learning plans</td></tr><tr><td>Annual Planning</td><td>Guides teams through the planning cycle</td></tr><tr><td>Customer Insight / Jobs to Be Done</td><td>Prepares interviews and structures customer learning</td></tr><tr><td>Purpose &amp; Values</td><td>Helps translate purpose and values into management choices and behaviours</td></tr></tbody></table></div>
+<div class="repo-card"><div class="repo-title">Leadership Operating System/</div><code>Future_Back_Strategy.skill<br>Annual_Planning.skill<br>Innovation_Portfolio.skill<br>Decision_Rights.skill<br>Meeting_Facilitator.skill<br>Board_Preparation.skill<br>Dilemma_Reconciliation.skill<br>Customer_Insight.skill<br>Purpose_and_Values.skill<br>AI_Opportunity_Scout.skill</code><p>The objective is not to replace managerial judgement. It is to make high-quality methods, questions and processes available at the moment managers need to exercise that judgement.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="leadership">
+<div class="container">
+<div class="journey-intro reveal">
+<div><span class="eyebrow">Leadership Development</span><h2>Leadership from the inside out.</h2></div>
+<p>Eight connected modules begin with what drives human behaviour, then apply that understanding to AI, dilemmas, the leadership role and culture, before moving into strategy, innovation and critical leadership moments.</p>
+</div>
+<div class="journey">
+<article class="journey-card reveal">
+<div class="journey-no">01</div>
+<div class="journey-copy"><h3 class="title-full">What Really Drives People: Motivation, Emotion and the Unconscious Brain</h3><p>Understand the psychological, social and organisational forces that shape energy, ownership, initiative and performance.</p></div>
+</article>
+<article class="journey-card reveal">
+<div class="journey-no">02</div>
+<div class="journey-copy"><h3 class="title-full">Leading AI Transformation: Human Behaviour Before Technology</h3><p>Diagnose and shape the human and organisational side of AI adoption, including autonomy, meaning, belonging, identity, status, power and unwritten rules.</p></div>
+</article>
+<article class="journey-card reveal">
+<div class="journey-no">03</div>
+<div class="journey-copy"><h3 class="title-full">Tension to Traction: Leading Through Dilemmas</h3><p>Distinguish problems to solve from dilemmas to reconcile, and turn tension between legitimate values into progress and value.</p></div>
+</article>
+<article class="journey-card reveal">
+<div class="journey-no">04</div>
+<div class="journey-copy"><h3 class="title-full">From Control to Trust: Servant Leadership Under Pressure</h3><p>Shift from leader-as-controller to leader-as-steward, while retaining direction, standards, accountability and performance under pressure.</p></div>
+</article>
+<article class="journey-card reveal">
+<div class="journey-no">05</div>
+<div class="journey-copy"><h3 class="title-full">Culture as a Management System: From Values to Behaviour</h3><p>Understand how leadership behaviour, management processes and everyday choices create culture, then align them with the culture the strategy requires.</p></div>
+</article>
+<article class="journey-card reveal">
+<div class="journey-no">06</div>
+<div class="journey-copy"><h3 class="title-full">Future-Back Leadership: Strategy, Innovation and Human Energy</h3><p>Connect future customer needs, strategic choices, innovation and human energy so that strategy gives people direction and agency.</p></div>
+</article>
+<article class="journey-card reveal">
+<div class="journey-no">07</div>
+<div class="journey-copy"><h3 class="title-full">Leadership for Disruptive Innovation</h3><p>Apply Clayton Christensen's disruption theory to the leadership challenge of building repeatable new growth inside established organisations.</p></div>
+</article>
+<article class="journey-card reveal">
+<div class="journey-no">08</div>
+<div class="journey-copy"><h3 class="title-full">Leadership in Action: Conversations, Decisions and Critical Moments</h3><p>Translate the programme into concrete behaviour in difficult conversations, decisions, conflicts, crises and other moments where leadership is tested.</p></div>
+</article>
+</div></div>
+
+</section>
+<section class="section-sm" id="management">
+<div class="container">
+<div cla
