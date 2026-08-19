@@ -1,0 +1,61 @@
+tainty.</p></article>
+<article class="module-card"><h4>Understanding Disruption</h4><p>Recognise disruptive threats and opportunities before conventional performance measures make them obvious.</p></article>
+<article class="module-card"><h4>Leading Entrepreneurial Organisations</h4><p>Create the conditions in which initiative, experimentation and entrepreneurship can thrive inside an established organisation.</p></article>
+<article class="module-card"><h4>Business Model Innovation</h4><p>Explore how changes to customers, propositions, economics and operating models can create new growth.</p></article>
+<article class="module-card"><h4>Innovation Portfolio Management</h4><p>Manage innovation as a portfolio of different horizons, uncertainties and learning objectives.</p></article>
+<article class="module-card"><h4>From Idea to Experiment</h4><p>Turn assumptions into tests and create evidence before making large commitments.</p></article>
+<article class="module-card"><h4>Jobs to Be Done for Innovation</h4><p>Understand the progress customers are trying to make and use it to identify opportunities for innovation.</p></article></div>
+</div>
+<div class="category-panel" data-panel="commercial" id="panel-commercial" role="tabpanel">
+<div class="category-heading"><span class="eyebrow">Management capability</span><h3>Customer &amp; Commercial Excellence</h3><span class="module-count">5 modules</span></div>
+<div class="module-grid"><article class="module-card"><h4>Customer Value Proposition</h4><p>Sharpen who the organisation serves, which customer jobs matter and why customers should choose its proposition.</p></article>
+<article class="module-card"><h4>Building a Customer-Centric Organisation</h4><p>Translate customer orientation from aspiration into management routines, information flows and decisions.</p></article>
+<article class="module-card"><h4>Building a Company-Wide Sales Orientation</h4><p>Make commercial orientation an organisational capability rather than the responsibility of the sales department alone.</p></article>
+<article class="module-card"><h4>Pricing</h4><p>Develop stronger pricing logic and decision-making based on customer value, economics and market behaviour.</p></article>
+<article class="module-card"><h4>Jobs to Be Done for Customer Insight</h4><p>Improve customer understanding by focusing on the progress customers are trying to make.</p></article></div>
+</div>
+<div class="category-panel" data-panel="culture" id="panel-culture" role="tabpanel">
+<div class="category-heading"><span class="eyebrow">Management capability</span><h3>Culture, Change &amp; Organisational Effectiveness</h3><span class="module-count">7 modules</span></div>
+<div class="module-grid"><article class="module-card"><h4>Current and Desired Culture</h4><p>Identify which elements of today's culture support the strategy and which need to change.</p></article>
+<article class="module-card"><h4>Culture for M&amp;A Value Creation</h4><p>Surface cultural differences and dilemmas early enough to protect integration value.</p></article>
+<article class="module-card"><h4>Adaptability Audit</h4><p>Identify hidden barriers that slow initiative, innovation and adaptability, then select the few changes that matter most.</p></article>
+<article class="module-card"><h4>Leading Change</h4><p>Help leaders create meaning, address uncertainty and shape the social dynamics that determine whether people adopt change.</p></article>
+<article class="module-card"><h4>Continuous Improvement</h4><p>Create lightweight routines for learning, problem-solving and improving flow.</p></article>
+<article class="module-card"><h4>Bureaucracy Busting: Designing for Speed, Coherence and Autonomy</h4><p>Redesign structures, processes and decision rights to increase speed and autonomy without losing coherence or control.</p></article>
+<article class="module-card"><h4>Learning from Netflix and Other Management Innovators</h4><p>Separate fashionable slogans from the management mechanisms underneath them and decide what is genuinely transferable.</p></article></div>
+</div>
+<div class="category-panel" data-panel="ai" id="panel-ai" role="tabpanel">
+<div class="category-heading"><span class="eyebrow">Management capability</span><h3>AI &amp; Future of Work</h3><span class="module-count">7 modules</span></div>
+<div class="module-grid"><article class="module-card"><h4>Understanding AI and Starting to Apply It</h4><p>Build practical AI literacy and identify applications that improve real work.</p></article>
+<article class="module-card"><h4>AI for Managers</h4><p>Develop the capability managers need to use, supervise and make sound judgements with AI in everyday work.</p></article>
+<article class="module-card"><h4>Managing AI Agents</h4><p>Learn how to delegate to, supervise and evaluate artificial agents.</p></article>
+<article class="module-card"><h4>Redesigning Work for Human-Agent Collaboration</h4><p>Reconsider tasks, processes and roles when work can be distributed between people and AI.</p></article>
+<article class="module-card"><h4>Building the Hybrid Human-Agent Organisation</h4><p>Address structure, accountability, governance and operating-model implications as agents become part of the workforce.</p></article>
+<article class="module-card"><h4>AI Governance for Executives and Supervisory Boards</h4><p>Understand the strategic opportunities, responsibilities and risks leadership teams and boards need to oversee.</p></article>
+<article class="module-card"><h4>Emerging Technology: Understanding Quantum</h4><p>Understand what quantum technologies could change and separate meaningful developments from hype.</p></article></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="research">
+<div class="container research-grid">
+<div class="research-copy reveal">
+<span class="eyebrow">Help us pressure-test it</span>
+<h2>Before we build too much, we want to understand the job properly.</h2>
+<p>This is deliberately a concept rather than a finished proposition. We want to understand the functional, emotional and social jobs different stakeholders are trying to get done when they select, buy, participate in and evaluate management development.</p>
+<div class="research-cta"><a class="btn btn-primary" href="mailto:info@intothenxt.com?subject=IntotheNXT%20Academy%20feedback">Share your perspective <span>→</span></a></div>
+</div>
+<div>
+<div class="questions reveal">
+<div class="question"><span>01</span><p>Tell us about the last leadership or management programme you bought, sponsored or attended. What triggered it?</p></div>
+<div class="question"><span>02</span><p>How did you choose between providers or alternatives, and who needed convincing?</p></div>
+<div class="question"><span>03</span><p>What happened when participants returned to their day jobs?</p></div>
+<div class="question"><span>04</span><p>Where does application of the learning typically break down?</p></div>
+<div class="question"><span>05</span><p>How do you currently know whether a programme worked?</p></div>
+<div class="question"><span>06</span><p>Would continued AI-supported application materially increase the value, or create new concerns?</p></div>
+<div class="question"><span>07</span><p>Which leadership or management capabilities on this menu would matter most in your organisation now?</p></div>
+</div>
+<details class="hypotheses reveal">
+<summary>Current hypotheses about stakeholder jobs to be done</summary>
+<div class="hypotheses-body">
+<div class="persona-grid">
