@@ -1,0 +1,52 @@
+ss="section-head reveal">
+<div><span class="eyebrow">Management Capability Programmes</span><h2>Start with the management problem.</h2></div>
+<p>Familiar capability categories make the menu easy to navigate. The content underneath carries the IntotheNXT philosophy and can be combined into company-specific programmes.</p>
+</div>
+<div class="menu-shell reveal">
+<div aria-label="Management programme categories" class="category-tabs" role="tablist"><div class="menu-rail-label">Explore by capability</div><button aria-selected="true" class="category-tab active" data-target="management" role="tab">Management Essentials</button>
+<button aria-selected="false" class="category-tab" data-target="teams" role="tab">Team Effectiveness</button>
+<button aria-selected="false" class="category-tab" data-target="personal" role="tab">Personal Effectiveness &amp; Communication</button>
+<button aria-selected="false" class="category-tab" data-target="strategy" role="tab">Strategy &amp; Execution</button>
+<button aria-selected="false" class="category-tab" data-target="innovation" role="tab">Innovation &amp; Growth</button>
+<button aria-selected="false" class="category-tab" data-target="commercial" role="tab">Customer &amp; Commercial Excellence</button>
+<button aria-selected="false" class="category-tab" data-target="culture" role="tab">Culture, Change &amp; Organisational Effectiveness</button>
+<button aria-selected="false" class="category-tab" data-target="ai" role="tab">AI &amp; Future of Work</button></div>
+<div class="category-panel active" data-panel="management" id="panel-management" role="tabpanel">
+<div class="category-heading"><span class="eyebrow">Management capability</span><h3>Management Essentials</h3><span class="module-count">7 modules</span></div>
+<div class="module-grid"><article class="module-card"><h4>Coaching &amp; Developing Others</h4><p>Build the capability of others rather than continually solving problems for them.</p></article>
+<article class="module-card"><h4>Delegation, Autonomy &amp; Accountability</h4><p>Delegate meaningful responsibility while remaining clear on outcomes, boundaries and accountability.</p></article>
+<article class="module-card"><h4>Decision-Making Under Uncertainty</h4><p>Make faster, better decisions when information is incomplete and assumptions remain uncertain.</p></article>
+<article class="module-card"><h4>Giving &amp; Receiving Feedback</h4><p>Make feedback frequent, useful and safe enough to improve performance.</p></article>
+<article class="module-card"><h4>Effective Meetings: Decisions, Not Theatre</h4><p>Design meetings around decisions, ownership and follow-through rather than recurring discussion.</p></article>
+<article class="module-card"><h4>Growth Mindset &amp; Learning Habits</h4><p>Turn learning and experimentation into concrete management habits.</p></article>
+<article class="module-card"><h4>Performance Conversations</h4><p>Hold clear conversations about expectations, performance, development and accountability.</p></article></div>
+</div>
+<div class="category-panel" data-panel="teams" id="panel-teams" role="tabpanel">
+<div class="category-heading"><span class="eyebrow">Management capability</span><h3>Team Effectiveness</h3><span class="module-count">5 modules</span></div>
+<div class="module-grid"><article class="module-card"><h4>Building High-Performing Teams</h4><p>Diagnose what holds a team back and strengthen trust, debate, commitment and accountability.</p></article>
+<article class="module-card"><h4>Psychological Safety</h4><p>Increase candour, speaking up and learning while maintaining high standards.</p></article>
+<article class="module-card"><h4>Leading Across Silos</h4><p>Improve cross-functional collaboration where priorities, identities and incentives create friction.</p></article>
+<article class="module-card"><h4>Constructive Conflict</h4><p>Use disagreement productively without drifting into artificial harmony or destructive conflict.</p></article>
+<article class="module-card"><h4>Sense of Belonging</h4><p>Build connection and group identity while protecting individuality and performance expectations.</p></article></div>
+</div>
+<div class="category-panel" data-panel="personal" id="panel-personal" role="tabpanel">
+<div class="category-heading"><span class="eyebrow">Management capability</span><h3>Personal Effectiveness &amp; Communication</h3><span class="module-count">4 modules</span></div>
+<div class="module-grid"><article class="module-card"><h4>Influencing &amp; Stakeholder Management</h4><p>Build support for ideas and decisions without relying solely on formal authority.</p></article>
+<article class="module-card"><h4>Negotiation &amp; Tough Conversations</h4><p>Navigate competing interests, difficult conversations and trade-offs while protecting relationships.</p></article>
+<article class="module-card"><h4>Communicating Ideas That Land</h4><p>Structure recommendations and messages so others can understand them, challenge them and act.</p></article>
+<article class="module-card"><h4>The Power of Humour</h4><p>Use humour appropriately to improve relationships, resilience and candour.</p></article></div>
+</div>
+<div class="category-panel" data-panel="strategy" id="panel-strategy" role="tabpanel">
+<div class="category-heading"><span class="eyebrow">Management capability</span><h3>Strategy &amp; Execution</h3><span class="module-count">8 modules</span></div>
+<div class="module-grid"><article class="module-card"><h4>Building a Visionary Company: Protect the Core, Create the Future</h4><p>Define what should endure and the future worth progressing towards, then make explicit what must change to get there.</p></article>
+<article class="module-card"><h4>Playing to Win</h4><p>Apply an integrated strategy-choice framework around winning aspiration, where to play, how to win, capabilities and management systems.</p></article>
+<article class="module-card"><h4>Future-Back Strategy</h4><p>Build strategy from future customer needs and future possibilities rather than extrapolating today's business.</p></article>
+<article class="module-card"><h4>Systems Thinking: Seeing the Whole, Not Just the Parts</h4><p>Recognise feedback loops, dependencies and unintended consequences so decisions improve the whole system rather than one part.</p></article>
+<article class="module-card"><h4>Strategy Execution</h4><p>Translate strategic choices into priorities, ownership, measures, management cadence and adaptation.</p></article>
+<article class="module-card"><h4>OGSM / OKRs</h4><p>Create clarity between ambition, objectives, measures and execution.</p></article>
+<article class="module-card"><h4>Adaptive Performance Management / Beyond Budgeting</h4><p>Create control through transparency, clear boundaries and adaptive steering rather than relying exclusively on fixed annual budgets.</p></article>
+<article class="module-card"><h4>Purpose and Values for Performance</h4><p>Connect purpose and values to strategic choices, leadership behaviour and organisational performance.</p></article></div>
+</div>
+<div class="category-panel" data-panel="innovation" id="panel-innovation" role="tabpanel">
+<div class="category-heading"><span class="eyebrow">Management capability</span><h3>Innovation &amp; Growth</h3><span class="module-count">7 modules</span></div>
+<div class="module-grid"><article class="module-card"><h4>Innovation Principles 101</h4><p>Create a common understanding of innovation and the different management approaches required under uncer
