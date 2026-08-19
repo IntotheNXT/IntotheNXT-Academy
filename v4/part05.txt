@@ -1,0 +1,73 @@
+ aria-label="Open menu" class="mobile-toggle" id="mobileToggle">Menu</button>
+<div class="nav-links" id="navLinks">
+<a data-nav-link="true" href="#gaps">Gaps</a>
+<a data-nav-link="true" href="#transfer">Capability transfer</a>
+<a data-nav-link="true" href="#example">In practice</a>
+<a data-nav-link="true" href="#leadership">Leadership</a>
+<a data-nav-link="true" href="#management">Management</a>
+<a class="nav-cta" data-nav-link="true" href="#research">Pressure-test it</a>
+</div>
+</div>
+</nav>
+<header class="hero" id="top">
+<img alt="" aria-hidden="true" class="hero-icon" src="assets/fast-forward.svg"/>
+<div class="container hero-grid">
+<div class="hero-copy">
+<span class="eyebrow">IntotheNXT Academy · working concept</span>
+<h1>Capability that remains <span>after the trainer leaves.</span></h1>
+<p class="lead">Organisations do not primarily need more management training. They need a better mechanism for turning better management thinking into <strong style="color:#fff">sustained organisational capability.</strong> True intelligence transfer, no more intelligence leaving when the consultant or trainer leaves the room.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#gaps">Explore the proposition <span>→</span></a>
+<a class="btn btn-secondary" href="#management">View programme menu</a>
+</div>
+</div>
+<aside class="hero-aside">
+<strong>Entrepreneurship and innovation, by design.</strong>
+IntotheNXT helps organisations become more entrepreneurial and innovative by building better leaders and better management systems. We combine behavioural science, modern management practice, best-practice processes and AI tools that help managers put those ideas into practice, every single day.
+</aside>
+</div>
+</header>
+<main>
+<section class="section" id="gaps">
+<div class="container">
+<div class="section-head reveal">
+<div><span class="eyebrow">Three gaps we address</span><h2>Gaps in how organisations develop leadership and management capability.</h2></div>
+<p>Three persistent gaps sit between learning, external expertise and sustained capability inside the organisation.</p>
+</div>
+<div class="gap-grid">
+<article class="gap-card reveal"><div class="gap-no">01</div><h3>The knowing-doing gap</h3><p><strong>Learning does not automatically change how work gets done.</strong></p><p>People leave training with new ideas and methods, but daily pressures and familiar routines quickly return. Without support at the moment of application, much of the learning fades.</p></article>
+<article class="gap-card reveal"><div class="gap-no">02</div><h3>The capability transfer gap</h3><p><strong>Consulting often delivers the answer without transferring the ability to reproduce the thinking.</strong></p><p>Organisations pay for external intelligence, but much of it leaves with the consultant. The answer remains. The capability to repeat, adapt and improve the method often does not.</p></article>
+<article class="gap-card reveal"><div class="gap-no">03</div><h3>The management thinking gap</h3><p><strong>There is a gap between what we know about how people and organisations work and how many organisations are still managed.</strong></p><p>Practices around motivation, budgeting, targets, performance, decision-making and control often reflect outdated assumptions about human behaviour.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section dark" id="transfer">
+<div class="container">
+<div class="section-head transfer-head reveal">
+<div><span class="eyebrow">From knowledge transfer to capability transfer</span><h2>Learn it. Apply it. Keep improving it.</h2></div>
+<p>We want the method to remain available when the real work starts, not only while the trainer or consultant is in the room.</p>
+</div>
+<div class="transfer-compare reveal">
+<div class="transfer-row traditional"><div class="transfer-label">Traditional model</div><div class="transfer-flow"><span>Workshop</span><b>→</b><span>Workbook or deck</span><b>→</b><span>Daily work takes over</span></div></div>
+<div class="transfer-row nxt"><div class="transfer-label">IntotheNXT model</div><div class="transfer-flow"><span>Learn &amp; practise</span><b>→</b><span>Apply with an AI Skill</span><b>→</b><span>Repeat in real work</span><b>→</b><span>Get guidance when stuck</span><b>→</b><span>Reinforce &amp; improve</span></div></div>
+</div>
+<div class="transfer-copy reveal">
+<p>Our programmes start with learning and practice on real situations. <strong>Where the management task lends itself to repeatable application, we add AI-enabled Skills or agents that help managers use the method in their actual work.</strong></p>
+<div class="transfer-points"><div><strong>The programme teaches the thinking.</strong><span>Participants learn the principles, understand the underlying assumptions and practise the approach on real situations.</span></div><div><strong>AI Skills and agents support application where they add real value.</strong><span>They can help managers apply the approach and guide teams through repeatable processes such as strategy sessions, innovation reviews, planning cycles and customer interviews.</span></div><div><strong>Repeated use builds capability.</strong><span>Experience, usage and outcomes can help improve both the management practice and the supporting tools over time.</span></div></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="example">
+<div class="container">
+<div class="section-head reveal"><div><span class="eyebrow">What capability transfer looks like in practice</span><h2>From training to an executable management method.</h2></div><p>The point is not to give participants another document. Where useful, the method itself can remain available in the AI environment they already use.</p></div>
+
+<div class="skill-definition reveal"><strong>An AI Skill is not a smart document, and it is more than a prompt. It is an executable workflow for an agent.</strong><p>It defines the steps to follow, the information required, the checks to perform, the outputs to produce, and the points at which the manager needs to review, judge or decide. It can be packaged, for example, as a <code>SKILL.md</code> file or as an equivalent Skill or agent in Microsoft Copilot.</p></div>
+
+<div class="example-block reveal">
+<span class="example-kicker">Example 1 · OGSM</span>
+<h3>From OGSM training to an executable AI Skill</h3>
+<p class="example-intro">Managers learn how Objective, Goals, Strategies and Measures fit together, how to distinguish outcomes from activities, and where real strategic choices are required. After the programme, they can continue working with an <strong>OGSM Skill</strong> that follows the same methodology.</p>
+<div class="example-grid">
+<div class="example-copy"><h3>The OGSM Skill can:</h3><ul><li>gather and structure the relevant strategic context</li><li>guide the team through Objective, Goals, Strategies and Measures</li><li>challenge weak logic or activity-based goals</li><li>surface assumptions and trade-offs</li><li>stop at defined management decision points</li><li>document decisions and unresolved issues</li><li>generate the OGSM and supporting management outputs</li><li>return later to support monthly or quarterly reviews</li></ul><p class="example-punch"><strong>The programme teaches managers how OGSM works and how to make the judgement calls.</strong> The Skill remains behind and helps them run the process again in real work. Over time, it can also incorporate company-specific templates, definitions a
