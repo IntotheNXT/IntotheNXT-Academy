@@ -42,6 +42,15 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+// Ensure the latest proposition copy is applied even when older content chunks are cached.
+const heroLead = document.querySelector('.hero-copy .lead');
+if (heroLead) {
+  heroLead.innerHTML = 'Organisations need a better mechanism for turning new skills and best practices into <strong style="color:#fff">sustained capability.</strong> The answer is training, combined with an AI agent at your fingertips that puts the new way of working into practice. True skill transfer, no more intelligence leaving when the consultant or trainer leaves the room.';
+}
+const skillDefinition = document.querySelector('.skill-definition');
+if (skillDefinition) {
+  skillDefinition.innerHTML = '<strong>Along with the training, participants receive an agent within their Microsoft Copilot, Claude or equivalent environment.</strong><p>The agent contains an <strong>executable workflow for an agent.</strong> It defines the steps to follow, the information required, the checks to perform, the outputs to produce, and the points at which the manager needs to review, judge or decide.</p>';
+}
 
 // Highlight the current section in the desktop navigation.
 const sectionLinks = [...document.querySelectorAll('[data-nav-link="true"]')]
