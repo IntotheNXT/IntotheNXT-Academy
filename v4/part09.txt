@@ -14,8 +14,8 @@
 <footer class="footer">
 <div class="container">
 <div class="footer-top">
-<img alt="IntotheNXT" class="footer-logo" src="assets/intothenxt-logo.svg"/>
-<div class="footer-contact"><span>Bas Kemme</span><a href="mailto:info@intothenxt.com">info@intothenxt.com</a><a href="https://www.intothenxt.com/">intotheNXT.com</a></div>
+<a href="https://www.intothenxt.com/" aria-label="Visit IntotheNXT"><img alt="IntotheNXT" class="footer-logo" src="assets/intothenxt-logo.svg"/></a>
+<div class="footer-contact"><span>Bas Kemme</span><a href="mailto:info@intothenxt.com">info@intothenxt.com</a><a href="https://www.intothenxt.com/">Visit IntotheNXT.com →</a></div>
 </div>
 <div class="footer-bottom"><span>© 2026 IntotheNXT. All rights reserved.</span><img alt="" class="footer-mark" src="assets/fast-forward.svg"/></div>
 </div>
