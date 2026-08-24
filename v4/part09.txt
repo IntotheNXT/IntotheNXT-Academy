@@ -66,7 +66,7 @@ if (transferPoints.length >= 2) {
 
 const skillDefinition = document.querySelector('.skill-definition');
 if (skillDefinition) {
-  skillDefinition.innerHTML = '<strong>Along with the training, participants receive an agent within their Microsoft Copilot or Claude environment.</strong><p>The underlying method can be packaged as a <code>SKILL.md</code> file or configured as a <strong>Microsoft Copilot agent</strong>. It defines the steps to follow, the information required, the checks to perform, the outputs to produce, and the points at which the manager needs to review, judge or decide.</p>';
+  skillDefinition.innerHTML = '<strong>Along with the training, participants receive an agent within their Microsoft Copilot or Claude environment.</strong><p>The underlying method can be packaged as a <code>SKILL.md</code> file or configured as a Microsoft Copilot agent. It defines the steps to follow, the information required, the checks to perform, the outputs to produce, and the points at which the manager needs to review, judge or decide.</p>';
 }
 
 // Show the live OKR example first, followed by OGSM.
