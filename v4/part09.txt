@@ -69,6 +69,30 @@ if (skillDefinition) {
   skillDefinition.innerHTML = '<strong>Along with the training, participants receive an agent within their Microsoft Copilot or Claude environment.</strong><p>The underlying method can be packaged as a <code>SKILL.md</code> file or configured as a <strong>Microsoft Copilot agent</strong>. It defines the steps to follow, the information required, the checks to perform, the outputs to produce, and the points at which the manager needs to review, judge or decide.</p>';
 }
 
+// Show the live OKR example first, followed by OGSM.
+const exampleContainer = document.querySelector('#example .container');
+const okrDemo = document.getElementById('okr-demo');
+const ogsmBlock = exampleContainer ? [...exampleContainer.querySelectorAll('.example-block')].find(el => el !== okrDemo && /OGSM/.test(el.textContent)) : null;
+if (exampleContainer && okrDemo && ogsmBlock) {
+  exampleContainer.insertBefore(okrDemo, ogsmBlock);
+  const okrKicker = okrDemo.querySelector('.example-kicker');
+  const ogsmKicker = ogsmBlock.querySelector('.example-kicker');
+  if (okrKicker) okrKicker.textContent = 'Example 1 · OKR Coach';
+  if (ogsmKicker) ogsmKicker.textContent = 'Example 2 · OGSM';
+}
+
+// Show Management Capability Programmes before Leadership Development.
+const managementSection = document.getElementById('management');
+const leadershipSection = document.getElementById('leadership');
+if (managementSection && leadershipSection && managementSection.parentNode === leadershipSection.parentNode) {
+  leadershipSection.parentNode.insertBefore(managementSection, leadershipSection);
+}
+const managementNavLink = navLinks.querySelector('a[href="#management"]');
+const leadershipNavLink = navLinks.querySelector('a[href="#leadership"]');
+if (managementNavLink && leadershipNavLink) {
+  navLinks.insertBefore(managementNavLink, leadershipNavLink);
+}
+
 // Highlight the current section in the desktop navigation.
 const sectionLinks = [...document.querySelectorAll('[data-nav-link="true"]')]
   .filter(a => a.getAttribute('href') !== '#research' || !a.classList.contains('nav-cta'));
