@@ -45,11 +45,28 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 // Ensure the latest proposition copy is applied even when older content chunks are cached.
 const heroLead = document.querySelector('.hero-copy .lead');
 if (heroLead) {
-  heroLead.innerHTML = 'Organisations need a better mechanism for turning new skills and best practices into <strong style="color:#fff">sustained capability.</strong> The answer is training, combined with an AI agent at your fingertips that puts the new way of working into practice. True skill transfer, no more intelligence leaving when the consultant or trainer leaves the room.';
+  heroLead.innerHTML = 'Organisations need a better mechanism for turning new skills and best practices into <strong style="color:#fff">sustained capability.</strong> We combine traditional skill transfer through workshops, classroom programmes and e-learning with literal skill transfer through an AI agent, available inside each employee\'s Microsoft Copilot or Claude environment. The training builds understanding and judgement; the agent helps put the new way of working into practice when the real work starts. The method stays available after the trainer or consultant leaves the room.';
 }
+
+const nxtFlow = document.querySelector('.transfer-row.nxt .transfer-flow');
+if (nxtFlow) {
+  nxtFlow.innerHTML = '<span>Workshop / classroom / e-learning</span><b>→</b><span>AI agent in Copilot or Claude</span><b>→</b><span>Apply in real work</span><b>→</b><span>Get guidance when stuck</span><b>→</b><span>Reinforce &amp; improve</span>';
+}
+
+const transferCopyIntro = document.querySelector('.transfer-copy > p');
+if (transferCopyIntro) {
+  transferCopyIntro.innerHTML = 'Our programmes combine two forms of skill transfer. <strong>Participants learn the method through workshops, classroom training or e-learning.</strong> Where the task lends itself to repeatable application, they also receive an AI agent in their organisation\'s Microsoft Copilot or Claude environment that helps them apply the method in real work.';
+}
+
+const transferPoints = document.querySelectorAll('.transfer-points > div');
+if (transferPoints.length >= 2) {
+  transferPoints[0].innerHTML = '<strong>The training builds understanding and judgement.</strong><span>Participants learn the principles, understand the underlying assumptions and practise the approach on real situations.</span>';
+  transferPoints[1].innerHTML = '<strong>The agent keeps the method at their fingertips.</strong><span>It can guide managers through repeatable processes such as strategy sessions, innovation reviews, planning cycles and customer interviews, inside the AI environment they already use.</span>';
+}
+
 const skillDefinition = document.querySelector('.skill-definition');
 if (skillDefinition) {
-  skillDefinition.innerHTML = '<strong>Along with the training, participants receive an agent within their Microsoft Copilot, Claude or equivalent environment.</strong><p>The agent contains an <strong>executable workflow for an agent.</strong> It defines the steps to follow, the information required, the checks to perform, the outputs to produce, and the points at which the manager needs to review, judge or decide.</p>';
+  skillDefinition.innerHTML = '<strong>Along with the training, participants receive an agent within their Microsoft Copilot or Claude environment.</strong><p>The underlying method can be packaged as a <code>SKILL.md</code> file or configured as a <strong>Microsoft Copilot agent</strong>. It defines the steps to follow, the information required, the checks to perform, the outputs to produce, and the points at which the manager needs to review, judge or decide.</p>';
 }
 
 // Highlight the current section in the desktop navigation.
