@@ -81,6 +81,30 @@ if (exampleContainer && okrDemo && ogsmBlock) {
   if (ogsmKicker) ogsmKicker.textContent = 'Example 2 · OGSM';
 }
 
+// Add the live OGSM Coach demo to the OGSM example.
+const ogsmDemoUrl = 'https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/cr428_ogsmcoach-demo_Gzl0o5/canvas?__version__=2&enableFileAttachment=false&cliAgent=true';
+if (ogsmBlock && !ogsmBlock.querySelector('.ogsm-demo-try')) {
+  const ogsmCopy = ogsmBlock.querySelector('.example-copy');
+  const sourceButton = okrDemo ? okrDemo.querySelector('a.btn') : null;
+  if (ogsmCopy && sourceButton) {
+    const buttonWrap = document.createElement('div');
+    buttonWrap.className = 'ogsm-demo-try';
+    buttonWrap.style.marginTop = '22px';
+    const button = sourceButton.cloneNode(true);
+    button.href = ogsmDemoUrl;
+    button.target = '_blank';
+    button.rel = 'noopener';
+    button.textContent = 'Try the OGSM Coach in Microsoft Copilot →';
+    buttonWrap.appendChild(button);
+    const safety = document.createElement('p');
+    safety.style.marginTop = '14px';
+    safety.style.fontSize = '13px';
+    safety.innerHTML = '<strong>Public demo.</strong> Do not enter confidential company information. Demo content should be fictional or non-sensitive.';
+    buttonWrap.appendChild(safety);
+    ogsmCopy.appendChild(buttonWrap);
+  }
+}
+
 // Add Sustainable Performance & Burnout Prevention to Team Effectiveness.
 const teamPanel = document.getElementById('panel-teams');
 const teamGrid = teamPanel ? teamPanel.querySelector('.module-grid') : null;
@@ -119,6 +143,24 @@ if (strategyGrid) {
         buttonWrap.style.marginTop = '18px';
         const button = sourceButton.cloneNode(true);
         button.textContent = 'Try the OKR Coach →';
+        button.style.fontSize = '13px';
+        button.style.padding = '11px 16px';
+        buttonWrap.appendChild(button);
+        okrOgsmCard.appendChild(buttonWrap);
+      }
+    }
+
+    if (!okrOgsmCard.querySelector('.ogsm-menu-try')) {
+      const sourceButton = okrDemo ? okrDemo.querySelector('a.btn') : null;
+      if (sourceButton) {
+        const buttonWrap = document.createElement('div');
+        buttonWrap.className = 'ogsm-menu-try';
+        buttonWrap.style.marginTop = '10px';
+        const button = sourceButton.cloneNode(true);
+        button.href = ogsmDemoUrl;
+        button.target = '_blank';
+        button.rel = 'noopener';
+        button.textContent = 'Try the OGSM Coach →';
         button.style.fontSize = '13px';
         button.style.padding = '11px 16px';
         buttonWrap.appendChild(button);
