@@ -81,6 +81,23 @@ if (exampleContainer && okrDemo && ogsmBlock) {
   if (ogsmKicker) ogsmKicker.textContent = 'Example 2 · OGSM';
 }
 
+// Add Sustainable Performance & Burnout Prevention to Team Effectiveness.
+const teamPanel = document.getElementById('panel-teams');
+const teamGrid = teamPanel ? teamPanel.querySelector('.module-grid') : null;
+if (teamPanel && teamGrid && ![...teamGrid.querySelectorAll('h4')].some(h => /Burnout Prevention/i.test(h.textContent || ''))) {
+  const card = document.createElement('article');
+  card.className = 'module-card';
+  card.innerHTML = '<h4>Sustainable Performance &amp; Burnout Prevention</h4><p>Recognise the organisational and team conditions that create chronic overload, and build healthier ways of working that protect energy, performance and accountability.</p>';
+  const psychologicalSafety = [...teamGrid.querySelectorAll('.module-card')].find(el => /Psychological Safety/i.test(el.querySelector('h4')?.textContent || ''));
+  if (psychologicalSafety && psychologicalSafety.nextSibling) {
+    teamGrid.insertBefore(card, psychologicalSafety.nextSibling);
+  } else {
+    teamGrid.appendChild(card);
+  }
+  const count = teamPanel.querySelector('.module-count');
+  if (count) count.textContent = '6 modules';
+}
+
 // Put the immediately testable Strategy & Execution modules first.
 const strategyGrid = document.querySelector('#panel-strategy .module-grid');
 if (strategyGrid) {
