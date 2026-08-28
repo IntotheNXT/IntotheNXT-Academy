@@ -81,6 +81,36 @@ if (exampleContainer && okrDemo && ogsmBlock) {
   if (ogsmKicker) ogsmKicker.textContent = 'Example 2 · OGSM';
 }
 
+// Put the immediately testable Strategy & Execution modules first.
+const strategyGrid = document.querySelector('#panel-strategy .module-grid');
+if (strategyGrid) {
+  const strategyCards = [...strategyGrid.querySelectorAll('.module-card')];
+  const okrOgsmCard = strategyCards.find(card => /OGSM\s*\/\s*OKR/i.test(card.querySelector('h4')?.textContent || ''));
+  const rockefellerCard = strategyCards.find(card => /Rockefeller Habits/i.test(card.querySelector('h4')?.textContent || ''));
+
+  if (rockefellerCard) strategyGrid.insertBefore(rockefellerCard, strategyGrid.firstChild);
+  if (okrOgsmCard) {
+    strategyGrid.insertBefore(okrOgsmCard, strategyGrid.firstChild);
+    const title = okrOgsmCard.querySelector('h4');
+    if (title) title.textContent = 'OKRs / OGSM';
+
+    if (!okrOgsmCard.querySelector('.okr-menu-try')) {
+      const sourceButton = okrDemo ? okrDemo.querySelector('a.btn') : null;
+      if (sourceButton) {
+        const buttonWrap = document.createElement('div');
+        buttonWrap.className = 'okr-menu-try';
+        buttonWrap.style.marginTop = '18px';
+        const button = sourceButton.cloneNode(true);
+        button.textContent = 'Try the OKR Coach →';
+        button.style.fontSize = '13px';
+        button.style.padding = '11px 16px';
+        buttonWrap.appendChild(button);
+        okrOgsmCard.appendChild(buttonWrap);
+      }
+    }
+  }
+}
+
 // Show Management Capability Programmes before Leadership Development.
 const managementSection = document.getElementById('management');
 const leadershipSection = document.getElementById('leadership');
