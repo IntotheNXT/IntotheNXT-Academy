@@ -63,24 +63,37 @@ try{
   html=html.replace(/<\/div>\s*<\/section>\s*(?=<section class="section deep" id="operating-system">)/,okrExample+'\n</div>\n</section>\n\n');
 
   const compactCss=`<style id="compact-academy-overrides">
+    /* This page is designed to live inside the main IntotheNXT site, so the Academy-specific nav is removed. */
+    .nav{display:none!important}
+    .hero{padding-top:86px!important}
     .section{padding:88px 0!important}.section-sm{padding:78px 0!important}
     .section-head{margin-bottom:42px!important}.journey-intro{margin-bottom:42px!important}
     .gap-card{padding-top:26px!important;padding-bottom:30px!important}.gap-no{margin-bottom:18px!important}
-    .transfer-points>div{padding:18px 0!important}.example-intro{margin-bottom:26px!important}
-    .example-block{margin-top:0!important;padding-top:0!important;border-top:0!important}
-    #leadership .journey-card{padding-top:24px!important;padding-bottom:24px!important}
     .hero-copy .hero-lead-secondary{margin-top:18px!important}
-    #example.compact-dark-example{background:var(--ink-deep)!important;color:#fff!important}
+
+    /* Solution chapter: first the visual contrast, then the three-step explanation. */
+    #transfer{padding-bottom:58px!important}
+    #transfer .transfer-compare{margin-top:12px!important}
+    #transfer .transfer-copy{display:block!important;margin-top:34px!important}
+    #transfer .transfer-points{max-width:760px!important}
+    #transfer .transfer-points>div{padding:18px 0!important}
+
+    /* Keep the OKR example visually inside the dark solution chapter. */
+    #example.compact-dark-example{background:var(--ink-deep)!important;color:#fff!important;padding-top:58px!important}
     #example.compact-dark-example .section-head h2,#example.compact-dark-example .example-block h3,#example.compact-dark-example .example-punch strong{color:#fff!important}
     #example.compact-dark-example .section-head>p,#example.compact-dark-example .example-intro,#example.compact-dark-example .example-copy ul,#example.compact-dark-example .demo-safety{color:rgba(255,255,255,.68)!important}
     #example.compact-dark-example .example-punch{border-color:rgba(255,255,255,.16)!important}
     #example.compact-dark-example .skill-window{background:rgba(255,255,255,.055)!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important}
     #example.compact-dark-example .btn-secondary{border-color:rgba(255,255,255,.35)!important;color:#fff!important}
+    .example-intro{margin-bottom:26px!important}.example-block{margin-top:0!important;padding-top:0!important;border-top:0!important}
     .demo-buttons{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:26px}
     .demo-safety{margin-top:14px!important;font-size:12px!important;line-height:1.6!important}
+
+    #leadership .journey-card{padding-top:24px!important;padding-bottom:24px!important}
     #research{background:#EEF4F0!important}
     #research .research-copy .eyebrow{color:var(--green-ink)!important}
-    @media(max-width:620px){.section{padding:64px 0!important}.section-sm{padding:60px 0!important}.demo-buttons .btn{width:100%;box-sizing:border-box;text-align:center}}
+
+    @media(max-width:620px){.hero{padding-top:58px!important}.section{padding:64px 0!important}.section-sm{padding:60px 0!important}.demo-buttons .btn{width:100%;box-sizing:border-box;text-align:center}}
   </style>`;
   html=html.replace('</head>',compactCss+'</head>');
 
@@ -95,10 +108,6 @@ try{
     if(heroLead){
       heroLead.outerHTML='<p class="lead hero-lead-primary">Organisations need a better mechanism for turning new skills and best practices into <strong style="color:#fff">sustained capability.</strong></p><p class="lead hero-lead-secondary">We combine skill transfer through workshops and e-learning with skill transfer through an AI agent available inside each employee\'s Microsoft Copilot or Claude chat. The training builds understanding and judgement; the agent helps put the new way of working into daily practice when the real work starts.</p>';
     }
-
-    // Navigation: make the story explicit.
-    const labels={'#gaps':'Problem','#transfer':'Solution','#example':'OKR example','#management':'Management','#leadership':'Leadership'};
-    Object.entries(labels).forEach(([href,label])=>set(qs('.nav-links a[href="'+href+'"]'),label));
 
     // THE PROBLEM
     const gaps=qs('#gaps');
@@ -115,13 +124,12 @@ try{
       cards.forEach((card,i)=>{if(copy[i]) card.innerHTML='<div class="gap-no">0'+(i+1)+'</div><h3>'+copy[i][0]+'</h3><p>'+copy[i][1]+'</p>';});
     }
 
-    // THE SOLUTION: three clear mechanisms.
+    // THE SOLUTION: retain the traditional-vs-IntotheNXT comparison, then explain the three steps below it.
     const transfer=qs('#transfer');
     if(transfer){
       set(qs('.section-head .eyebrow',transfer),'The solution');
-      set(qs('.section-head h2',transfer),'Three ways we close those gaps.');
-      set(qs('.section-head > p',transfer),'Learn the method. Apply it in real work. Keep improving through repeated use.');
-      qs('.transfer-compare',transfer)?.remove();
+      set(qs('.section-head h2',transfer),'From learning event to lasting capability.');
+      set(qs('.section-head > p',transfer),'The difference is what remains available when people return to the real work.');
       qs('.transfer-copy > p',transfer)?.remove();
       const pts=qsa('.transfer-points > div',transfer);
       const copy=[
@@ -150,7 +158,6 @@ try{
 
     // Remove the operating-system section entirely.
     qs('#operating-system')?.remove();
-    qs('.nav-links a[href="#operating-system"]')?.remove();
 
     // Management menu: start with the capability, not the problem.
     const management=qs('#management');
