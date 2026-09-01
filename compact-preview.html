@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Compact IntotheNXT Academy proposition preview.">
+<title>IntotheNXT Academy · Compact preview</title>
+<style>html,body{margin:0;min-height:100%;background:#171B20}#loading{font-family:Arial,sans-serif;color:#fff;padding:40px;opacity:.7}</style>
+</head>
+<body>
+<div id="loading">Loading IntotheNXT Academy compact preview…</div>
+<script>
+(async()=>{
+try{
+  const files=['v4/part01.txt','v4/part02.txt','v4/part03.txt','v4/part04.txt','v4/part05.txt','v4/part06.txt','v4/part07.txt','v4/part08.txt','v4/part09.txt'];
+  let html='';
+  for(const file of files){
+    const r=await fetch(file,{cache:'no-store'});
+    if(!r.ok) throw new Error(file+' '+r.status);
+    html+=await r.text();
+  }
+
+  // Preserve the latest additions that currently live in the production index wrapper.
+  html=html.replace(
+    '<div class="category-heading"><span class="eyebrow">Management capability</span><h3>Strategy &amp; Execution</h3><span class="module-count">8 modules</span></div>',
+    '<div class="category-heading"><span class="eyebrow">Management capability</span><h3>Strategy &amp; Execution</h3><span class="module-count">9 modules</span></div>'
+  );
+  html=html.replace(
+    '<article class="module-card"><h4>Strategy Execution</h4><p>Translate strategic choices into priorities, ownership, measures, management cadence and adaptation.</p></article>',
+    '<article class="module-card"><h4>Strategy Execution</h4><p>Translate strategic choices into priorities, ownership, measures, management cadence and adaptation.</p></article><article class="module-card"><h4>Rockefeller Habits: Building a High-Performance Management Cadence</h4><p>Build the management rhythms, priorities, accountability and performance disciplines that help growing organisations execute consistently without adding unnecessary bureaucracy.</p><p style="margin-top:12px"><a href="https://management-cadence-check.bas-kemme.chatgpt.site" target="_blank" rel="noopener noreferrer" style="font-weight:700;color:var(--green-ink)">Try the Management Cadence Check →</a></p></article>'
+  );
+
+  const okrExample=`
+  <div class="example-block reveal" id="okr-demo">
+    <span class="example-kicker">Example · OKR Coach</span>
+    <h3>From OKR training to everyday application</h3>
+    <p class="example-intro">The training teaches the method. The OKR Coach helps employees apply it when they create, improve or review real OKRs.</p>
+    <div class="example-grid">
+      <div class="example-copy">
+        <ul>
+          <li>guide someone through creating an Objective and measurable Key Results</li>
+          <li>challenge Key Results that are activities rather than outcomes</li>
+          <li>check measurability, targets and strategic relevance</li>
+          <li>support recurring review of OKR progress</li>
+        </ul>
+        <p class="example-punch"><strong>Training builds understanding and judgement.</strong> The agent keeps the method available when the real work starts.</p>
+        <div style="margin-top:26px"><a class="btn btn-primary" href="https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/new_okrcoach/canvas?__version__=2&amp;enableFileAttachment=false&amp;cliAgent=true" target="_blank" rel="noopener noreferrer">Try the OKR Coach in Microsoft Copilot →</a></div>
+        <p style="margin-top:14px;font-size:12px;line-height:1.6;color:var(--muted)"><strong style="color:var(--ink)">Public demo.</strong> Do not enter confidential company information.</p>
+      </div>
+      <div class="skill-window"><div class="skill-window-top"><span></span><span></span><span></span><em>OKR_Coach.agent</em></div><pre>01  Understand strategic context
+02  Draft Objective options
+03  HUMAN CHECKPOINT: choose direction
+04  Build measurable Key Results
+05  Challenge activities vs outcomes
+06  Validate and explain weaknesses
+07  Review OKR progress
+08  HUMAN CHECKPOINT: management decision</pre></div>
+    </div>
+  </div>`;
+  html=html.replace(/<\/div>\s*<\/section>\s*(?=<section class="section deep" id="operating-system">)/,okrExample+'\n</div>\n</section>\n\n');
+
+  const compactCss=`<style id="compact-academy-overrides">
+    .section{padding:88px 0!important}.section-sm{padding:78px 0!important}
+    .section-head{margin-bottom:42px!important}.journey-intro{margin-bottom:42px!important}
+    .gap-card{padding-top:26px!important;padding-bottom:30px!important}.gap-no{margin-bottom:18px!important}
+    .transfer-points>div{padding:18px 0!important}.example-intro{margin-bottom:26px!important}
+    .example-block{margin-top:0!important;padding-top:0!important;border-top:0!important}
+    #leadership .journey-card{padding-top:24px!important;padding-bottom:24px!important}
+    @media(max-width:620px){.section{padding:64px 0!important}.section-sm{padding:60px 0!important}}
+  </style>`;
+  html=html.replace('</head>',compactCss+'</head>');
+
+  const compactPatch=`<script id="compact-academy-patch">
+  (()=>{
+    const qs=(s,r=document)=>r.querySelector(s);
+    const qsa=(s,r=document)=>[...r.querySelectorAll(s)];
+    const set=(el,text)=>{if(el) el.textContent=text;};
+
+    // Navigation: make the story explicit.
+    const labels={'#gaps':'Problem','#transfer':'Solution','#example':'OKR example','#management':'Management','#leadership':'Leadership'};
+    Object.entries(labels).forEach(([href,label])=>set(qs('.nav-links a[href="'+href+'"]'),label));
+
+    // 1. THE PROBLEM
+    const gaps=qs('#gaps');
+    if(gaps){
+      set(qs('.section-head .eyebrow',gaps),'The problem');
+      set(qs('.section-head h2',gaps),'Three gaps prevent learning from becoming lasting capability.');
+      set(qs('.section-head > p',gaps),'These are the problems the Academy is designed to solve.');
+      const cards=qsa('.gap-card',gaps);
+      const copy=[
+        ['The knowing-doing gap','People learn a method, then return to familiar routines. Without support at the moment of use, application fades.'],
+        ['The capability transfer gap','External expertise often delivers the answer without leaving behind the ability to repeat and adapt the method.'],
+        ['The management thinking gap','Many management practices still reflect outdated assumptions about motivation, control, targets and decision-making.']
+      ];
+      cards.forEach((card,i)=>{if(copy[i]) card.innerHTML='<div class="gap-no">0'+(i+1)+'</div><h3>'+copy[i][0]+'</h3><p>'+copy[i][1]+'</p>';});
+    }
+
+    // 2. THE SOLUTION: three clear mechanisms, without another comparison layer.
+    const transfer=qs('#transfer');
+    if(transfer){
+      set(qs('.section-head .eyebrow',transfer),'The solution');
+      set(qs('.section-head h2',transfer),'Three ways we close those gaps.');
+      set(qs('.section-head > p',transfer),'Learn the method. Apply it in real work. Keep improving through repeated use.');
+      qs('.transfer-compare',transfer)?.remove();
+      qs('.transfer-copy > p',transfer)?.remove();
+      const pts=qsa('.transfer-points > div',transfer);
+      const copy=[
+        ['1 · Learn it','Workshops, classroom programmes or e-learning build understanding, practice and managerial judgement.'],
+        ['2 · Apply it','An AI agent in Microsoft Copilot or Claude keeps the method at people’s fingertips when the real work starts.'],
+        ['3 · Improve it','Repeated use and review help embed the capability and improve both the practice and the supporting tool over time.']
+      ];
+      pts.forEach((p,i)=>{if(copy[i]) p.innerHTML='<strong>'+copy[i][0]+'</strong><span>'+copy[i][1]+'</span>';});
+    }
+
+    // 3. ONE EXAMPLE ONLY: OKR.
+    const example=qs('#example');
+    if(example){
+      set(qs('.section-head .eyebrow',example),'One example');
+      set(qs('.section-head h2',example),'OKR training that stays available in the work.');
+      set(qs('.section-head > p',example),'The training teaches the method. The OKR Coach helps people apply it when they create or review real OKRs.');
+      qs('.skill-definition',example)?.remove();
+      qsa('.example-block',example).forEach(block=>{if(block.id!=='okr-demo') block.remove();});
+      const okr=qs('#okr-demo',example);
+      if(okr){
+        set(qs('.example-kicker',okr),'Example · OKR Coach');
+        set(qs('h3',okr),'From OKR training to everyday application');
+      }
+    }
+
+    // 4. Remove the operating-system section entirely.
+    qs('#operating-system')?.remove();
+    qs('.nav-links a[href="#operating-system"]')?.remove();
+
+    // 5. Management menu: start with the capability, not the problem.
+    const management=qs('#management');
+    if(management){
+      set(qs('.section-head .eyebrow',management),'Management capabilities');
+      set(qs('.section-head h2',management),'Which management capability do you need to build?');
+      set(qs('.section-head > p',management),'Choose a capability area. Modules can be combined into company-specific programmes.');
+    }
+
+    // Leadership sits after management in the current production architecture.
+    const leadership=qs('#leadership');
+    if(leadership){
+      set(qs('.journey-intro .eyebrow',leadership),'Leadership capabilities');
+      set(qs('.journey-intro h2',leadership),'We also build leadership capability.');
+      set(qs('.journey-intro > p',leadership),'Management capability is about the methods and practices that help organisations run well. Leadership capability is about how leaders understand people, exercise judgement and create direction, trust and movement when the situation is difficult. Organisations need both.');
+    }
+
+    // Keep the research section as the final section.
+    const research=qs('#research');
+    if(research && research.parentElement) research.parentElement.appendChild(research);
+  })();
+  <\/script>`;
+  html=html.replace('</body>',compactPatch+'</body>');
+
+  document.open();document.write(html);document.close();
+}catch(e){
+  document.body.innerHTML='<div style="font-family:Arial,sans-serif;color:white;padding:40px">Unable to load the Academy preview. Please refresh.</div>';
+  console.error(e);
+}
+})();
+</script>
+</body>
+</html>
