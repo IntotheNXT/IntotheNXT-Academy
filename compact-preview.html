@@ -44,8 +44,11 @@ try{
           <li>support recurring review of OKR progress</li>
         </ul>
         <p class="example-punch"><strong>Training builds understanding and judgement.</strong> The agent keeps the method available when the real work starts.</p>
-        <div style="margin-top:26px"><a class="btn btn-primary" href="https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/new_okrcoach/canvas?__version__=2&amp;enableFileAttachment=false&amp;cliAgent=true" target="_blank" rel="noopener noreferrer">Try the OKR Coach in Microsoft Copilot →</a></div>
-        <p style="margin-top:14px;font-size:12px;line-height:1.6;color:var(--muted)"><strong style="color:var(--ink)">Public demo.</strong> Do not enter confidential company information.</p>
+        <div class="demo-buttons">
+          <a class="btn btn-primary" href="https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/new_okrcoach/canvas?__version__=2&amp;enableFileAttachment=false&amp;cliAgent=true" target="_blank" rel="noopener noreferrer">Try the OKR Coach in Microsoft Copilot →</a>
+          <a class="btn btn-secondary" href="https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/cr428_ogsmcoach-demo_Gzl0o5/canvas?__version__=2&amp;enableFileAttachment=false&amp;cliAgent=true" target="_blank" rel="noopener noreferrer">Try the OGSM Coach in Microsoft Copilot →</a>
+        </div>
+        <p class="demo-safety"><strong>Public demos.</strong> Do not enter confidential company information.</p>
       </div>
       <div class="skill-window"><div class="skill-window-top"><span></span><span></span><span></span><em>OKR_Coach.agent</em></div><pre>01  Understand strategic context
 02  Draft Objective options
@@ -66,7 +69,18 @@ try{
     .transfer-points>div{padding:18px 0!important}.example-intro{margin-bottom:26px!important}
     .example-block{margin-top:0!important;padding-top:0!important;border-top:0!important}
     #leadership .journey-card{padding-top:24px!important;padding-bottom:24px!important}
-    @media(max-width:620px){.section{padding:64px 0!important}.section-sm{padding:60px 0!important}}
+    .hero-copy .hero-lead-secondary{margin-top:18px!important}
+    #example.compact-dark-example{background:var(--ink-deep)!important;color:#fff!important}
+    #example.compact-dark-example .section-head h2,#example.compact-dark-example .example-block h3,#example.compact-dark-example .example-punch strong{color:#fff!important}
+    #example.compact-dark-example .section-head>p,#example.compact-dark-example .example-intro,#example.compact-dark-example .example-copy ul,#example.compact-dark-example .demo-safety{color:rgba(255,255,255,.68)!important}
+    #example.compact-dark-example .example-punch{border-color:rgba(255,255,255,.16)!important}
+    #example.compact-dark-example .skill-window{background:rgba(255,255,255,.055)!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important}
+    #example.compact-dark-example .btn-secondary{border-color:rgba(255,255,255,.35)!important;color:#fff!important}
+    .demo-buttons{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:26px}
+    .demo-safety{margin-top:14px!important;font-size:12px!important;line-height:1.6!important}
+    #research{background:#EEF4F0!important}
+    #research .research-copy .eyebrow{color:var(--green-ink)!important}
+    @media(max-width:620px){.section{padding:64px 0!important}.section-sm{padding:60px 0!important}.demo-buttons .btn{width:100%;box-sizing:border-box;text-align:center}}
   </style>`;
   html=html.replace('</head>',compactCss+'</head>');
 
@@ -76,15 +90,21 @@ try{
     const qsa=(s,r=document)=>[...r.querySelectorAll(s)];
     const set=(el,text)=>{if(el) el.textContent=text;};
 
+    // Break the hero proposition into two shorter thoughts.
+    const heroLead=qs('.hero-copy .lead');
+    if(heroLead){
+      heroLead.outerHTML='<p class="lead hero-lead-primary">Organisations need a better mechanism for turning new skills and best practices into <strong style="color:#fff">sustained capability.</strong></p><p class="lead hero-lead-secondary">We combine skill transfer through workshops and e-learning with skill transfer through an AI agent available inside each employee\'s Microsoft Copilot or Claude chat. The training builds understanding and judgement; the agent helps put the new way of working into daily practice when the real work starts.</p>';
+    }
+
     // Navigation: make the story explicit.
     const labels={'#gaps':'Problem','#transfer':'Solution','#example':'OKR example','#management':'Management','#leadership':'Leadership'};
     Object.entries(labels).forEach(([href,label])=>set(qs('.nav-links a[href="'+href+'"]'),label));
 
-    // 1. THE PROBLEM
+    // THE PROBLEM
     const gaps=qs('#gaps');
     if(gaps){
       set(qs('.section-head .eyebrow',gaps),'The problem');
-      set(qs('.section-head h2',gaps),'Three gaps prevent learning from becoming lasting capability.');
+      set(qs('.section-head h2',gaps),'Gaps in how organisations develop leadership and management capability.');
       set(qs('.section-head > p',gaps),'These are the problems the Academy is designed to solve.');
       const cards=qsa('.gap-card',gaps);
       const copy=[
@@ -95,7 +115,7 @@ try{
       cards.forEach((card,i)=>{if(copy[i]) card.innerHTML='<div class="gap-no">0'+(i+1)+'</div><h3>'+copy[i][0]+'</h3><p>'+copy[i][1]+'</p>';});
     }
 
-    // 2. THE SOLUTION: three clear mechanisms, without another comparison layer.
+    // THE SOLUTION: three clear mechanisms.
     const transfer=qs('#transfer');
     if(transfer){
       set(qs('.section-head .eyebrow',transfer),'The solution');
@@ -112,9 +132,10 @@ try{
       pts.forEach((p,i)=>{if(copy[i]) p.innerHTML='<strong>'+copy[i][0]+'</strong><span>'+copy[i][1]+'</span>';});
     }
 
-    // 3. ONE EXAMPLE ONLY: OKR.
+    // ONE EXAMPLE ONLY: keep it visually part of the dark Solution chapter.
     const example=qs('#example');
     if(example){
+      example.classList.add('dark','compact-dark-example');
       set(qs('.section-head .eyebrow',example),'One example');
       set(qs('.section-head h2',example),'OKR training that stays available in the work.');
       set(qs('.section-head > p',example),'The training teaches the method. The OKR Coach helps people apply it when they create or review real OKRs.');
@@ -127,11 +148,11 @@ try{
       }
     }
 
-    // 4. Remove the operating-system section entirely.
+    // Remove the operating-system section entirely.
     qs('#operating-system')?.remove();
     qs('.nav-links a[href="#operating-system"]')?.remove();
 
-    // 5. Management menu: start with the capability, not the problem.
+    // Management menu: start with the capability, not the problem.
     const management=qs('#management');
     if(management){
       set(qs('.section-head .eyebrow',management),'Management capabilities');
@@ -139,15 +160,15 @@ try{
       set(qs('.section-head > p',management),'Choose a capability area. Modules can be combined into company-specific programmes.');
     }
 
-    // Leadership sits after management in the current production architecture.
+    // Leadership as the second capability type, with a more executive framing.
     const leadership=qs('#leadership');
     if(leadership){
       set(qs('.journey-intro .eyebrow',leadership),'Leadership capabilities');
-      set(qs('.journey-intro h2',leadership),'We also build leadership capability.');
-      set(qs('.journey-intro > p',leadership),'Management capability is about the methods and practices that help organisations run well. Leadership capability is about how leaders understand people, exercise judgement and create direction, trust and movement when the situation is difficult. Organisations need both.');
+      set(qs('.journey-intro h2',leadership),'Leadership capability when judgement matters most.');
+      set(qs('.journey-intro > p',leadership),'Management capability provides the methods and practices to run the organisation well. Leadership capability develops the judgement required to understand people, navigate tension, create trust and provide direction when circumstances are ambiguous or difficult. Strong organisations need both.');
     }
 
-    // Keep the research section as the final section.
+    // Keep the research section as the final section and visually distinguish it.
     const research=qs('#research');
     if(research && research.parentElement) research.parentElement.appendChild(research);
   })();
