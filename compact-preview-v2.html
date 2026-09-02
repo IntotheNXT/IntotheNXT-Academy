@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Compact IntotheNXT Academy proposition preview.">
+<title>IntotheNXT Academy · Compact preview</title>
+<style>html,body{margin:0;min-height:100%;background:#171B20}#loading{font-family:Arial,sans-serif;color:#fff;padding:40px;opacity:.7}</style>
+</head>
+<body>
+<div id="loading">Loading IntotheNXT Academy compact preview…</div>
+<script>
+(async()=>{
+try{
+  const files=['v4/part01.txt','v4/part02.txt','v4/part03.txt','v4/part04.txt','v4/part05.txt','v4/part06.txt','v4/part07.txt','v4/part08.txt','v4/part09.txt'];
+  let html='';
+  for(const file of files){
+    const r=await fetch(file,{cache:'no-store'});
+    if(!r.ok) throw new Error(file+' '+r.status);
+    html+=await r.text();
+  }
+
+  const css=`<style id="compact-academy-overrides">
+    .nav{display:none!important}
+    .hero{padding-top:86px!important}
+    .section{padding:88px 0!important}.section-sm{padding:78px 0!important}
+    .section-head{margin-bottom:42px!important}.journey-intro{margin-bottom:42px!important}
+    .gap-card{padding-top:26px!important;padding-bottom:30px!important}.gap-no{margin-bottom:18px!important}
+    .hero-copy .hero-lead-secondary{margin-top:18px!important}
+
+    #transfer{padding-bottom:72px!important}
+    #transfer .transfer-compare{margin-top:14px!important;margin-bottom:34px!important}
+    #transfer .transfer-copy{display:block!important;margin-top:0!important}
+    #transfer .transfer-copy>p{display:none!important}
+    #transfer .transfer-points{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;max-width:none!important}
+    #transfer .transfer-points>div{display:block!important;padding:24px!important;border:1px solid rgba(255,255,255,.16)!important;border-radius:14px!important;background:rgba(255,255,255,.045)!important;min-height:165px!important}
+    #transfer .transfer-points>div strong{display:block!important;color:#00e58a!important;font-size:15px!important;margin-bottom:12px!important}
+    #transfer .transfer-points>div span{display:block!important;color:rgba(255,255,255,.72)!important;line-height:1.55!important}
+
+    #example.compact-dark-example{background:var(--ink-deep)!important;color:#fff!important;padding-top:58px!important}
+    #example.compact-dark-example .section-head h2,#example.compact-dark-example .example-block h3,#example.compact-dark-example .example-punch strong{color:#fff!important}
+    #example.compact-dark-example .section-head>p,#example.compact-dark-example .example-intro,#example.compact-dark-example .example-copy ul,#example.compact-dark-example .demo-safety{color:rgba(255,255,255,.68)!important}
+    #example.compact-dark-example .example-punch{border-color:rgba(255,255,255,.16)!important}
+    #example.compact-dark-example .skill-window{background:rgba(255,255,255,.055)!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important}
+    #example.compact-dark-example .btn-secondary{background:transparent!important;border:1px solid rgba(255,255,255,.42)!important;color:#fff!important}
+    #example.compact-dark-example .btn-secondary:hover{background:rgba(255,255,255,.08)!important}
+    .example-intro{margin-bottom:26px!important}.example-block{margin-top:0!important;padding-top:0!important;border-top:0!important}
+    .demo-buttons{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:26px}
+    .demo-buttons .btn{opacity:1!important;visibility:visible!important}
+    .demo-safety{margin-top:14px!important;font-size:12px!important;line-height:1.6!important}
+
+    #leadership .journey-card{padding-top:24px!important;padding-bottom:24px!important}
+    #research{background:#EEF4F0!important}
+    #research .research-copy .eyebrow{color:var(--green-ink)!important}
+
+    @media(max-width:850px){#transfer .transfer-points{grid-template-columns:1fr!important}}
+    @media(max-width:620px){.hero{padding-top:58px!important}.section{padding:64px 0!important}.section-sm{padding:60px 0!important}.demo-buttons .btn{width:100%;box-sizing:border-box;text-align:center}}
+  </style>`;
+  html=html.replace('</head>',css+'</head>');
+
+  const okrBlock=`<div class="example-block reveal" id="compact-okr-demo">
+    <span class="example-kicker">Example · OKR Coach</span>
+    <h3>From OKR training to everyday application</h3>
+    <p class="example-intro">The training teaches the method. The OKR Coach helps employees apply it when they create, improve or review real OKRs.</p>
+    <div class="example-grid">
+      <div class="example-copy">
+        <ul>
+          <li>guide someone through creating an Objective and measurable Key Results</li>
+          <li>challenge Key Results that are activities rather than outcomes</li>
+          <li>check measurability, targets and strategic relevance</li>
+          <li>support recurring review of OKR progress</li>
+        </ul>
+        <p class="example-punch"><strong>Training builds understanding and judgement.</strong> The agent keeps the method available when the real work starts.</p>
+        <div class="demo-buttons">
+          <a class="btn btn-primary" href="https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/new_okrcoach/canvas?__version__=2&amp;enableFileAttachment=false&amp;cliAgent=true" target="_blank" rel="noopener noreferrer">Try the OKR Coach in Microsoft Copilot →</a>
+          <a class="btn btn-secondary" href="https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/cr428_ogsmcoach-demo_Gzl0o5/canvas?__version__=2&amp;enableFileAttachment=false&amp;cliAgent=true" target="_blank" rel="noopener noreferrer">Try the OGSM Coach in Microsoft Copilot →</a>
+        </div>
+        <p class="demo-safety"><strong>Public demos.</strong> Do not enter confidential company information.</p>
+      </div>
+      <div class="skill-window"><div class="skill-window-top"><span></span><span></span><span></span><em>OKR_Coach.agent</em></div><pre>01  Understand strategic context
+02  Draft Objective options
+03  HUMAN CHECKPOINT: choose direction
+04  Build measurable Key Results
+05  Challenge activities vs outcomes
+06  Validate and explain weaknesses
+07  Review OKR progress
+08  HUMAN CHECKPOINT: management decision</pre></div>
+    </div>
+  </div>`;
+
+  const patch=`<script id="compact-academy-patch">
+  (()=>{
+    const apply=()=>{
+      const qs=(s,r=document)=>r.querySelector(s);
+      const qsa=(s,r=document)=>[...r.querySelectorAll(s)];
+      const set=(el,text)=>{if(el) el.textContent=text;};
+
+      const heroLead=qs('.hero-copy .lead');
+      if(heroLead){heroLead.outerHTML='<p class="lead hero-lead-primary">Organisations need a better mechanism for turning new skills and best practices into <strong style="color:#fff">sustained capability.</strong></p><p class="lead hero-lead-secondary">We combine skill transfer through workshops and e-learning with skill transfer through an AI agent available inside each employee\\'s Microsoft Copilot or Claude chat. The training builds understanding and judgement; the agent helps put the new way of working into daily practice when the real work starts.</p>';}
+
+      const gaps=qs('#gaps');
+      if(gaps){
+        set(qs('.section-head .eyebrow',gaps),'The problem');
+        set(qs('.section-head h2',gaps),'Gaps in how organisations develop leadership and management capability.');
+        set(qs('.section-head > p',gaps),'These are the problems the Academy is designed to solve.');
+      }
+
+      const transfer=qs('#transfer');
+      if(transfer){
+        set(qs('.section-head .eyebrow',transfer),'The solution');
+        set(qs('.section-head h2',transfer),'From learning event to lasting capability.');
+        set(qs('.section-head > p',transfer),'The difference is what remains available when people return to the real work.');
+        const pts=qsa('.transfer-points > div',transfer);
+        const copy=[
+          ['1 · Learn it','Workshops, classroom programmes or e-learning build understanding, practice and managerial judgement.'],
+          ['2 · Apply it','An AI agent in Microsoft Copilot or Claude keeps the method at people’s fingertips when the real work starts.'],
+          ['3 · Improve it','Repeated use and review help embed the capability and improve both the practice and the supporting tool over time.']
+        ];
+        pts.forEach((p,i)=>{if(copy[i]) p.innerHTML='<strong>'+copy[i][0]+'</strong><span>'+copy[i][1]+'</span>';});
+      }
+
+      const example=qs('#example');
+      if(example){
+        example.classList.add('dark','compact-dark-example');
+        set(qs('.section-head .eyebrow',example),'One example');
+        set(qs('.section-head h2',example),'OKR training that stays available in the work.');
+        set(qs('.section-head > p',example),'The training teaches the method. The OKR Coach helps people apply it when they create or review real OKRs.');
+        qs('.skill-definition',example)?.remove();
+        qsa('.example-block',example).forEach(b=>b.remove());
+        const container=qs('.container',example);
+        if(container && !qs('#compact-okr-demo',example)) container.insertAdjacentHTML('beforeend', ${JSON.stringify(okrBlock)});
+      }
+
+      qs('#operating-system')?.remove();
+
+      const management=qs('#management');
+      if(management){
+        set(qs('.section-head .eyebrow',management),'Management capabilities');
+        set(qs('.section-head h2',management),'Which management capability do you need to build?');
+        set(qs('.section-head > p',management),'Choose a capability area. Modules can be combined into company-specific programmes.');
+      }
+
+      const leadership=qs('#leadership');
+      if(leadership){
+        set(qs('.journey-intro .eyebrow',leadership),'Leadership capabilities');
+        set(qs('.journey-intro h2',leadership),'Leadership capability when judgement matters most.');
+        set(qs('.journey-intro > p',leadership),'Management capability provides the methods and practices to run the organisation well. Leadership capability develops the judgement required to understand people, navigate tension, create trust and provide direction when circumstances are ambiguous or difficult. Strong organisations need both.');
+      }
+
+      const research=qs('#research');
+      if(research && research.parentElement) research.parentElement.appendChild(research);
+    };
+
+    // Run after the V4 runtime script has completed its own mutations.
+    setTimeout(apply,0);
+    setTimeout(apply,150);
+  })();
+  <\/script>`;
+  html=html.replace('</body>',patch+'</body>');
+
+  document.open();document.write(html);document.close();
+}catch(e){
+  document.body.innerHTML='<div style="font-family:Arial,sans-serif;color:white;padding:40px">Unable to load the Academy preview. Please refresh.</div>';
+  console.error(e);
+}
+})();
+</script>
+</body>
+</html>
