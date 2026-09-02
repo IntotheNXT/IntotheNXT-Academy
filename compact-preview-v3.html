@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="IntotheNXT Academy proposition preview incorporating prospect feedback.">
+<title>IntotheNXT Academy · Prospect-feedback preview</title>
+<style>html,body{margin:0;min-height:100%;background:#171B20}#loading{font-family:Arial,sans-serif;color:#fff;padding:40px;opacity:.7}</style>
+</head>
+<body>
+<div id="loading">Loading IntotheNXT Academy preview…</div>
+<script>
+(async()=>{
+try{
+  const files=['v4/part01.txt','v4/part02.txt','v4/part03.txt','v4/part04.txt','v4/part05.txt','v4/part06.txt','v4/part07.txt','v4/part08.txt','v4/part09.txt'];
+  let html='';
+  for(const file of files){
+    const r=await fetch(file,{cache:'no-store'});
+    if(!r.ok) throw new Error(file+' '+r.status);
+    html+=await r.text();
+  }
+
+  const css=`<style id="academy-v3-overrides">
+    .nav{display:none!important}
+    .hero{padding-top:86px!important}
+    .hero-copy .lead{max-width:980px!important}
+    .hero-copy .hero-lead-secondary{margin-top:18px!important}
+    .section{padding:88px 0!important}.section-sm{padding:78px 0!important}
+    .section-head{margin-bottom:42px!important}.journey-intro{margin-bottom:42px!important}
+
+    /* One concrete problem only. */
+    #gaps .gap-grid{display:block!important;border-top:0!important}
+    #gaps .gap-card{max-width:860px!important;border:0!important;padding:0!important;background:transparent!important;box-shadow:none!important}
+    #gaps .gap-card:not(:first-child){display:none!important}
+    #gaps .gap-card .gap-no{display:none!important}
+    #gaps .gap-card h3{font-size:clamp(25px,3vw,37px)!important;margin-bottom:16px!important}
+    #gaps .gap-card p{font-size:18px!important;line-height:1.65!important}
+
+    /* Old way / new way and four-step learning loop. */
+    #transfer{padding-bottom:76px!important}
+    #transfer .transfer-compare{margin-top:14px!important;margin-bottom:38px!important}
+    #transfer .transfer-copy{display:block!important;margin-top:0!important}
+    #transfer .transfer-points{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important;max-width:none!important}
+    #transfer .transfer-points>div{display:block!important;padding:24px!important;border:1px solid rgba(255,255,255,.16)!important;border-radius:14px!important;background:rgba(255,255,255,.045)!important;min-height:185px!important}
+    #transfer .transfer-points>div strong{display:block!important;color:#05ff9b!important;font-size:15px!important;margin-bottom:12px!important}
+    #transfer .transfer-points>div span{display:block!important;color:rgba(255,255,255,.74)!important;line-height:1.58!important}
+    #transfer .transfer-points>div.judgement-step{border-color:rgba(5,255,155,.5)!important;background:rgba(5,255,155,.06)!important}
+    #transfer .transfer-points>div.judgement-step .checkpoint{display:inline-block!important;margin-top:15px!important;padding:8px 10px!important;border:1px solid rgba(5,255,155,.5)!important;border-radius:999px!important;color:#05ff9b!important;font-size:11px!important;font-weight:800!important;letter-spacing:.08em!important;text-transform:uppercase!important}
+
+    /* Differentiation + company-specificity. */
+    #embedded-method{background:#f7f8f6!important}
+    .method-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:72px;align-items:start}
+    .method-grid h2{margin-top:10px}.method-copy{font-size:18px;color:#56606a;line-height:1.68}
+    .method-copy p+p{margin-top:18px}.method-copy .punch{font-size:22px;color:#252b33;line-height:1.45;margin-top:30px}
+    .method-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}
+    .method-list div{background:#fff;border:1px solid #dde2e3;border-radius:14px;padding:18px 19px;font-size:14px;font-weight:700;line-height:1.45}
+    .method-company{margin-top:28px;padding:24px;border-left:3px solid #00845a;background:#eef5f1;border-radius:0 14px 14px 0}
+    .method-company strong{display:block;margin-bottom:8px;color:#123127}
+
+    /* One OKR example, focused on the learning mechanics. */
+    #example.compact-dark-example{background:var(--ink-deep)!important;color:#fff!important;padding-top:70px!important}
+    #example.compact-dark-example .section-head h2,#example.compact-dark-example .example-block h3,#example.compact-dark-example .example-punch strong{color:#fff!important}
+    #example.compact-dark-example .section-head>p,#example.compact-dark-example .example-intro,#example.compact-dark-example .demo-safety{color:rgba(255,255,255,.68)!important}
+    #example.compact-dark-example .skill-window{background:rgba(255,255,255,.055)!important;border:1px solid rgba(255,255,255,.14)!important;box-shadow:none!important}
+    #example.compact-dark-example .btn-secondary{background:transparent!important;border:1px solid rgba(255,255,255,.42)!important;color:#fff!important}
+    #example.compact-dark-example .btn-secondary:hover{background:rgba(255,255,255,.08)!important}
+    .example-block{margin-top:0!important;padding-top:0!important;border-top:0!important}
+    .example-intro{margin-bottom:28px!important}
+    .learning-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0 26px}
+    .learning-action{padding:17px 18px;border:1px solid rgba(255,255,255,.13);border-radius:12px;background:rgba(255,255,255,.035)}
+    .learning-action strong{display:block!important;color:#05ff9b!important;font-size:13px!important;margin-bottom:6px}.learning-action span{display:block;color:rgba(255,255,255,.7);font-size:13px;line-height:1.5}
+    .human-checkpoint{margin:24px 0;padding:20px 22px;border:1px solid rgba(5,255,155,.55);border-radius:14px;background:rgba(5,255,155,.06)}
+    .human-checkpoint .checkpoint-label{display:block;color:#05ff9b;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+    .human-checkpoint strong{display:block;color:#fff;font-size:19px;line-height:1.4;margin-bottom:5px}.human-checkpoint span{color:rgba(255,255,255,.65);font-size:13px}
+    .demo-buttons{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:26px}.demo-buttons .btn{opacity:1!important;visibility:visible!important}.demo-safety{margin-top:14px!important;font-size:12px!important;line-height:1.6!important}
+
+    #management{padding-top:88px!important}
+    #leadership .journey-card{padding-top:24px!important;padding-bottom:24px!important}
+    #leadership .leadership-purpose{margin-top:24px;padding:22px 24px;background:#eef5f1;border-left:3px solid #00845a;border-radius:0 14px 14px 0;color:#123127;font-size:16px;line-height:1.6}
+    #research{background:#EEF4F0!important}
+    #research .research-copy .eyebrow{color:var(--green-ink)!important}
+
+    @media(max-width:1000px){#transfer .transfer-points{grid-template-columns:repeat(2,minmax(0,1fr))!important}.method-grid{grid-template-columns:1fr;gap:34px}}
+    @media(max-width:700px){#transfer .transfer-points,.method-list,.learning-actions{grid-template-columns:1fr!important}}
+    @media(max-width:620px){.hero{padding-top:58px!important}.section{padding:64px 0!important}.section-sm{padding:60px 0!important}.demo-buttons .btn{width:100%;box-sizing:border-box;text-align:center}}
+  </style>`;
+  html=html.replace('</head>',css+'</head>');
+
+  const embeddedMethod=`<section class="section" id="embedded-method"><div class="container"><div class="method-grid"><div><span class="eyebrow">What makes the difference</span><h2>The value is in what you put inside it.</h2></div><div class="method-copy"><p><strong>Anyone can build an AI agent.</strong> The difference is what you teach it and how you make it challenge the user.</p><p>A useful learning coach combines a strong management method with an understanding of how that method should work in practice.</p><div class="method-list"><div>Management method</div><div>Sequence of questions</div><div>Quality checks</div><div>Human judgement points</div><div>Company definitions &amp; language</div><div>Templates, examples &amp; routines</div></div><div class="method-company"><strong>From a proven method to “how we do it here”.</strong>The coach can incorporate company terminology, templates, examples, management routines, quality standards and explicit judgement points. The result is not generic AI knowledge, but a method-specific learning coach that understands how your organisation wants the method applied.</div><p class="punch"><strong>The technology is easy to build. The real value lies in the method, workflow and judgement embedded inside it.</strong></p></div></div></div></section>`;
+
+  const okrBlock=`<div class="example-block reveal" id="compact-okr-demo"><span class="example-kicker">One example · OKR Coach</span><h3>From OKR training to everyday application</h3><p class="example-intro">The training teaches the method. The OKR Coach keeps that method available when people create, improve or review real OKRs, while continuing to develop their own judgement.</p><div class="example-grid"><div class="example-copy"><div class="learning-actions"><div class="learning-action"><strong>Remember</strong><span>Bring the method back when the real work starts.</span></div><div class="learning-action"><strong>Structure</strong><span>Follow Objective and Key Results in the right sequence.</span></div><div class="learning-action"><strong>Challenge</strong><span>Spot activities disguised as outcomes, vague measures and weak logic.</span></div><div class="learning-action"><strong>Guide</strong><span>Explain what is weak and what needs more thinking.</span></div><div class="learning-action"><strong>Stop</strong><span>Pause when a strategic or management judgement is required.</span></div><div class="learning-action"><strong>Review</strong><span>Return later to support recurring progress discussions.</span></div></div><div class="human-checkpoint"><span class="checkpoint-label">Human checkpoint</span><strong>Which strategic direction do you actually want to commit to?</strong><span>The coach supports the thinking. Management makes the judgement call.</span></div><div class="demo-buttons"><a class="btn btn-primary" href="https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/new_okrcoach/canvas?__version__=2&amp;enableFileAttachment=false&amp;cliAgent=true" target="_blank" rel="noopener noreferrer">Try the OKR Coach in Microsoft Copilot →</a><a class="btn btn-secondary" href="https://copilotstudio.microsoft.com/environments/Default-c6453d07-bd3d-4a29-849d-0688f52a3b2d/bots/cr428_ogsmcoach-demo_Gzl0o5/canvas?__version__=2&amp;enableFileAttachment=false&amp;cliAgent=true" target="_blank" rel="noopener noreferrer">Try the OGSM Coach in Microsoft Copilot →</a></div><p class="demo-safety"><strong>Public demos.</strong> Do not enter confidential company information.</p></div><div class="skill-window"><div class="skill-window-top"><span></span><span></span><span></span><em>OKR_Coach.agent</em></div><pre>01  Understand strategic context
+02  Draft Objective options
+03  Challenge weak reasoning
+04  HUMAN CHECKPOINT: choose direction
+05  Build measurable Key Results
+06  Challenge activities vs outcomes
+07  HUMAN CHECKPOINT: approve trade-offs
+08  Review progress and learn</pre></div></div></div>`;
+
+  const patch=`<script id="academy-v3-patch">
+  (()=>{
+    const apply=()=>{
+      const qs=(s,r=document)=>r.querySelector(s);
+      const qsa=(s,r=document)=>[...r.querySelectorAll(s)];
+      const set=(el,text)=>{if(el) el.textContent=text;};
+
+      // Hero: make continued learning and human judgement the central proposition.
+      const heroLead=qs('.hero-copy .lead');
+      if(heroLead){heroLead.outerHTML='<p class="lead hero-lead-primary">Training often fades when people return to work.</p><p class="lead hero-lead-secondary">We combine high-quality management training with method-specific AI learning coaches that help people apply what they learned in real situations and further develop human judgement. <strong style="color:#fff">The learning continues.</strong></p>';}
+
+      // One concrete problem only.
+      const gaps=qs('#gaps');
+      if(gaps){
+        set(qs('.section-head .eyebrow',gaps),'The problem');
+        set(qs('.section-head h2',gaps),'Training often fades when people return to work.');
+        set(qs('.section-head > p',gaps),'Participants understand the method, may be enthusiastic and leave with a workbook, slides or templates. Then daily work takes over and old routines return.');
+        const first=qs('.gap-card',gaps);
+        if(first){first.innerHTML='<h3>Learning needs to remain available when the real work starts.</h3><p>People need support at the moment they apply the method, not only while the trainer is in the room.</p>';}
+      }
+
+      // Old way / new way.
+      const transfer=qs('#transfer');
+      if(transfer){
+        set(qs('.section-head .eyebrow',transfer),'The solution');
+        set(qs('.section-head h2',transfer),'The learning continues in the work.');
+        set(qs('.section-head > p',transfer),'A method-specific learning coach stays available when the actual task appears, challenges the user and helps train human judgement.');
+        const trad=qs('.transfer-row.traditional .transfer-flow',transfer);
+        if(trad) trad.innerHTML='<span>Workshop</span><b>→</b><span>Workbook or deck</span><b>→</b><span>Daily work takes over</span>';
+        const nxt=qs('.transfer-row.nxt .transfer-flow',transfer);
+        if(nxt) nxt.innerHTML='<span>Learn it</span><b>→</b><span>Apply it</span><b>→</b><span>Train human judgement</span><b>→</b><span>Repeat &amp; improve</span>';
+        const copy=qs('.transfer-copy',transfer);
+        if(copy) copy.innerHTML='<div class="transfer-points"><div><strong>1 · Learn the method</strong><span>Understand the principles and why the method works.</span></div><div><strong>2 · Apply it in real work</strong><span>The learning coach guides the method when the actual task appears.</span></div><div class="judgement-step"><strong>3 · Train human judgement</strong><span>At defined points, the coach asks the manager or team to decide, so judgement continues to develop.</span><span class="checkpoint">Human checkpoint</span></div><div><strong>4 · Repeat &amp; improve</strong><span>The method remains available for recurring use and agent improvement.</span></div></div>';
+      }
+
+      // Insert the combined differentiation/company-specificity section right after the solution.
+      const transferSection=qs('#transfer');
+      if(transferSection && !qs('#embedded-method')) transferSection.insertAdjacentHTML('afterend', ${JSON.stringify(embeddedMethod)});
+
+      // One example only.
+      const example=qs('#example');
+      if(example){
+        example.classList.add('dark','compact-dark-example');
+        set(qs('.section-head .eyebrow',example),'One example');
+        set(qs('.section-head h2',example),'OKR training that stays available in the work.');
+        set(qs('.section-head > p',example),'The coach does not take over the thinking. It helps people apply the method, challenges weak reasoning and pauses where judgement is required.');
+        qs('.skill-definition',example)?.remove();
+        qsa('.example-block',example).forEach(b=>b.remove());
+        const container=qs('.container',example);
+        if(container && !qs('#compact-okr-demo',example)) container.insertAdjacentHTML('beforeend', ${JSON.stringify(okrBlock)});
+      }
+
+      qs('#operating-system')?.remove();
+
+      // Bring the management capability library forward.
+      const management=qs('#management');
+      const leadership=qs('#leadership');
+      if(management){
+        set(qs('.section-head .eyebrow',management),'Management capabilities');
+        set(qs('.section-head h2',management),'Which management capability do you need to build?');
+        set(qs('.section-head > p',management),'Choose a capability area. Modules can be combined into company-specific programmes and, where useful, supported by method-specific learning coaches.');
+      }
+      if(management && leadership && management.parentNode===leadership.parentNode){leadership.parentNode.insertBefore(management,leadership);}
+
+      // Leadership rationale: outdated assumptions + entrepreneurship and innovation.
+      if(leadership){
+        set(qs('.journey-intro .eyebrow',leadership),'Leadership capabilities');
+        set(qs('.journey-intro h2',leadership),'Leadership capability when judgement matters most.');
+        const p=qs('.journey-intro > p',leadership);
+        if(p){p.innerHTML='Better management methods are only part of the answer. Many organisations still operate with assumptions about motivation, control, decision-making and leadership that no longer fit what we know about how people and organisations perform. Our leadership programmes develop the judgement required to understand people, navigate tension, create trust and provide direction when there is no simple answer.<div class="leadership-purpose"><strong>The ultimate goal is to help organisations become more entrepreneurial and innovative:</strong> combining autonomy with coherence, new ideas with discipline, trust with accountability, and speed with quality.</div>';}
+      }
+
+      const research=qs('#research');
+      if(research && research.parentElement) research.parentElement.appendChild(research);
+    };
+
+    // Apply after the existing V4 runtime has completed its own mutations.
+    setTimeout(apply,0);
+    setTimeout(apply,180);
+  })();
+  <\/script>`;
+  html=html.replace('</body>',patch+'</body>');
+
+  document.open();document.write(html);document.close();
+}catch(e){
+  document.body.innerHTML='<div style="font-family:Arial,sans-serif;color:white;padding:40px">Unable to load the Academy preview. Please refresh.</div>';
+  console.error(e);
+}
+})();
+</script>
+</body>
+</html>
